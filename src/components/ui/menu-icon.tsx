@@ -1,0 +1,17 @@
+export default function MenuIcon() {
+    return (
+        <div>
+            <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <rect width="29.9999" height="6.5217" rx="3.26085" fill="black" />
+                <rect y="11.7393" width="29.9999" height="6.5217" rx="3.26085" fill="black" />
+                <rect y="23.478" width="29.9999" height="6.5217" rx="3.26085" fill="black" />
+            </svg>
+        </div>
+    );
+}
