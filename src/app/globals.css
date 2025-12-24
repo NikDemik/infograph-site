@@ -7,7 +7,9 @@
   --foreground: #171717;
 
 	--active: #694fd7;
-	--default: #000;
+	--black: #000;
+  --white: #fff;
+  --gray: #6c6c6c;
 
   --color-gradient: linear-gradient(1deg, #a9b0ff 0%, #f1f1f1 100%);
 }  
@@ -17,6 +19,9 @@
   --color-foreground: var(--foreground);
 
   --color-active: var(--active);
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-gray: var(--gray);
 
   --font-sf: var(--font-sf);
   --font-inter: var(--font-inter);

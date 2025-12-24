@@ -49,7 +49,7 @@ export default function RootLayout({
         <html lang="ru">
             <body className={`${interSans.variable} ${sfFont.variable} antialiased`}>
                 <HeaderMobil />
-                <main className="min-h-screen max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8 dark:bg-black">
+                <main className="min-h-screen max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8 dark:bg-black h-[4000px]">
                     {children}
                 </main>
             </body>
