@@ -1,0 +1,47 @@
+/* Кастомные стили для обрезки первого и последнего слайда */
+.mySwiper {
+    padding: 20px 0 !important;
+}
+
+.mySwiper .swiper-slide {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+/* Первый и пятый слайды обрезаны наполовину */
+.mySwiper .swiper-slide:first-child {
+    transform: translateX(50%) scale(0.85);
+    opacity: 0.5;
+}
+
+.mySwiper .swiper-slide:nth-child(5) {
+    transform: translateX(-50%) scale(0.85);
+    opacity: 0.5;
+}
+
+/* Центральный слайд (активный) */
+.mySwiper .swiper-slide-active {
+    transform: scale(1.05);
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Соседние слайды (2 и 4) */
+.mySwiper .swiper-slide-prev,
+.mySwiper .swiper-slide-next {
+    opacity: 0.9;
+}
+
+/* Кастомная пагинация */
+.custom-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #ccc;
+    opacity: 0.7;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+    background: #3b82f6;
+    opacity: 1;
+    transform: scale(1.2);
+}

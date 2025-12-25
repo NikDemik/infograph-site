@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-import HeaderMobil from '@/components/header-mobil';
+import HeaderMobil from '@/components/Header-mobile';
 
 const interSans = Inter({
     variable: '--font-inter',
@@ -24,6 +24,11 @@ const sfFont = localFont({
         {
             path: '../fonts/SF-Pro-Display-Semibold.woff',
             weight: '600',
+            style: 'normal',
+        },
+        {
+            path: '../fonts/SF-Pro-Display-Bold.woff',
+            weight: '700',
             style: 'normal',
         },
         {

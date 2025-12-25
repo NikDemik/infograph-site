@@ -7,11 +7,14 @@
   --foreground: #171717;
 
 	--active: #694fd7;
+  --active-light: #e2e8ff;
 	--black: #000;
   --white: #fff;
   --gray: #6c6c6c;
 
   --color-gradient: linear-gradient(1deg, #a9b0ff 0%, #f1f1f1 100%);
+
+  --shadow-main: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }  
 
 @theme inline {
@@ -19,9 +22,12 @@
   --color-foreground: var(--foreground);
 
   --color-active: var(--active);
+  --color-active-light: var(--active-light);
   --color-black: var(--black);
   --color-white: var(--white);
   --color-gray: var(--gray);
+
+  --shadow-main: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   --font-sf: var(--font-sf);
   --font-inter: var(--font-inter);
@@ -37,15 +43,16 @@
 @layer base {
 
     body {
-        @apply bg-background text-foreground font-sf;
+        @apply bg-background text-foreground font-sf overflow-x-hidden;
     }
 
-    /* h1,
-    h2,
-    h3,
-    h4 {
-        font-weight: 700;
-    } */
+    h2 {
+      @apply text-[2.5rem] font-bold 
+    }
+
+    p {
+      @apply text-xl text-gray font-normal
+    }
 
     a {
         text-decoration: none;
@@ -58,4 +65,10 @@
   .bg-banner-gradient {
     @apply bg-linear-to-t from-[#a9b0ff] to-[#f1f1f1]
   }
+
+  /* .swiper {
+  width: 100%;
+  height: 100%;
+} */
+
 }
