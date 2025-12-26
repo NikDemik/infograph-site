@@ -10,12 +10,12 @@ export function SectionShell({ children }: { children: React.ReactNode }) {
                     src="/img/blue-star.png"
                     width={566}
                     height={566}
-                    alt="Звездочка"
+                    alt="Картинка фона синяя звезда"
                     className="
                         hidden 
                         md:block
                         absolute
-                        -bottom-6
+                        top-[40vh]
                         -right-[max(16px,calc((100vw-1530px)/2-60px))]
                         w-[clamp(260px,28vw,420px)]
                         h-auto
@@ -23,20 +23,21 @@ export function SectionShell({ children }: { children: React.ReactNode }) {
                 />
 
                 {/* Объект 2 — второй элемент выше */}
-                {/* <Image
-                    src="/img/blue-star.png"
-                    width={400}
-                    height={400}
-                    alt=""
+                <Image
+                    src="/img/yellow-star.png"
+                    width={555}
+                    height={555}
+                    alt="Картинка фона желтая звезда"
                     className="
+                        hidden 
+                        md:block
                         absolute
-                        top-30
-                        left-[calc((100vw-1530px)/2-80px)]
-                        w-[clamp(200px,22vw,340px)]
-                        opacity-60
+                        top-[260vh]
+                        -left-[max(16px,calc((100vw-1530px)/2-60px))]
+                        w-[clamp(260px,28vw,420px)]
                         h-auto
                     "
-                /> */}
+                />
             </div>
 
             {/* КОНТЕНТ */}

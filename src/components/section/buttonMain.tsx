@@ -10,7 +10,7 @@ export default function ButtonHome() {
                 </Button>
 
                 <div className="flex items-center justify-center">
-                    <p className="text-[1.125rem] md:text-xl text-center">
+                    <p className=" text-center">
                         Карточки, которые продают, а не просто <br className="md:hidden" />
                         показывают.
                         <br />

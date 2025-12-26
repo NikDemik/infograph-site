@@ -3,6 +3,7 @@ import { SectionShell } from '@/components/layout/SectionShell';
 import About from '@/components/section/About';
 import ButtonHome from '@/components/section/ButtonMain';
 import HeroBanner from '@/components/section/Hero';
+import HowWork from '@/components/section/HowWork';
 import Works from '@/components/section/Works';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
                 <ButtonHome />
                 <About />
                 <Works />
+                <HowWork />
             </SectionShell>
         </>
     );

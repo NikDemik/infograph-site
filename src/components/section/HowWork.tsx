@@ -1,0 +1,170 @@
+import Image from 'next/image';
+
+export default function HowWork() {
+    const datas = [
+        {
+            title: 'Брифинг и анализ товара',
+            desc: 'Определяем ключевые характеристики, аудиторию и требования маркетплейса.',
+        },
+        {
+            title: 'Разработка концепции',
+            desc: 'Формируем визуальное решение и структуру будущей карточки.',
+        },
+        {
+            title: 'Подготовка материалов',
+            desc: 'Обрабатываем фото, создаём инфографику, собираем контент.',
+        },
+        {
+            title: 'Верстка карточек',
+            desc: 'Собираем финальные макеты в соответствии с техническими требованиями площадки.',
+        },
+        {
+            title: 'Сдача и корректировки',
+            desc: 'Передаём готовые материалы и вносим необходимые правки.',
+        },
+        { title: 'Все!', desc: '' },
+    ];
+    return (
+        <section className="relative z-10 mt-[4.5vw] md:py-11 md:bg-gray-light">
+            {/* Фон, который выходит за пределы контейнера */}
+            <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen md:bg-gray-light -z-10" />
+
+            <h2>Как мы работаем</h2>
+            <div className=" flex flex-col gap-5">
+                <div className=" hidden md:flex justify-between ">
+                    <p className=" mt-5 hidden md:block">
+                        Понятная и выверенная последовательность действий,
+                        <br />
+                        обеспечивающая стабильный результат.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-7.5">
+                    <div className=" col-span-1 hidden xl:flex">
+                        <Image
+                            src="/img/how-work.png"
+                            width={361}
+                            height={478}
+                            alt="Инфографика как мы работаем"
+                        />
+                    </div>
+                    <div className=" hidden md:grid col-span-4 col-start-1 xl:col-span-3 xl:col-start-2 ">
+                        <div className="flex flex-col gap-28">
+                            {/* Первые три карточки */}
+                            <div className="w-full">
+                                {/* Первая полоса */}
+                                <div className="pr-[17vw]">
+                                    <svg
+                                        className="w-full h-10"
+                                        viewBox="0 0 821 40"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        preserveAspectRatio="xMidYMid meet"
+                                    >
+                                        <rect
+                                            width="781"
+                                            height="8"
+                                            transform="matrix(-1 0 0 1 801 16)"
+                                            fill="url(#paint0_linear_2327_102)"
+                                        />
+                                        <circle
+                                            cx="19.6078"
+                                            cy="19.6078"
+                                            r="19.6078"
+                                            transform="matrix(-1 0 0 1 39.2158 0)"
+                                            fill="#694FD7"
+                                        />
+                                        <circle
+                                            cx="19.6078"
+                                            cy="19.6078"
+                                            r="19.6078"
+                                            transform="matrix(-1 0 0 1 430.216 0)"
+                                            fill="#AE9BDC"
+                                        />
+                                        <circle
+                                            cx="19.6078"
+                                            cy="19.6078"
+                                            r="19.6078"
+                                            transform="matrix(-1 0 0 1 820.216 0)"
+                                            fill="#DED0DF"
+                                        />
+                                        <defs>
+                                            <linearGradient
+                                                id="paint0_linear_2327_102"
+                                                x1="0"
+                                                y1="4"
+                                                x2="781"
+                                                y2="4"
+                                                gradientUnits="userSpaceOnUse"
+                                            >
+                                                <stop stop-color="#E3D5DF" />
+                                                <stop offset="1" stop-color="#694FD7" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+
+                                {/*Первые три карточки */}
+                                <div className="grid grid-cols-3 gap-7.5 mt-5">
+                                    {datas.slice(0, 3).map((data, index) => (
+                                        <div key={index} className=" w-full max-w-67.5 h-39.75 ">
+                                            <div>
+                                                <div className=" text-xl font-semibold mb-2">
+                                                    {data.title}
+                                                </div>
+                                                <p className="">{data.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {/* Карточки с 4-6 */}
+                            <div className="w-full">
+                                {/* Вторая полоса */}
+                                <div className="pr-[17vw]">
+                                    <svg
+                                        className="w-full h-10 max-w-205.25"
+                                        viewBox="0 0 821 40"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        preserveAspectRatio="xMidYMid meet"
+                                    >
+                                        <path
+                                            d="M800.608 0C811.437 0.000227816 820.216 8.77864 820.216 19.6074C820.216 30.4364 811.437 39.2156 800.608 39.2158C791.289 39.2158 783.488 32.7144 781.494 24H429.722C427.727 32.7143 419.927 39.2156 410.608 39.2158C401.289 39.2158 393.488 32.7144 391.494 24H38.7217C36.7274 32.7143 28.9273 39.2156 19.6084 39.2158C8.77929 39.2158 0 30.4365 0 19.6074C0.000227818 8.7785 8.77943 0 19.6084 0C29.2047 0.000201888 37.1891 6.89449 38.8828 16H391.333C393.027 6.89435 401.012 0 410.608 0C420.205 0.000201888 428.189 6.89449 429.883 16H781.333C783.027 6.89435 791.012 0 800.608 0Z"
+                                            fill="url(#paint0_linear_2328_204)"
+                                        />
+                                        <defs>
+                                            <linearGradient
+                                                id="paint0_linear_2328_204"
+                                                x1="689.216"
+                                                y1="19.6079"
+                                                x2="1.71418e-06"
+                                                y2="19.6079"
+                                                gradientUnits="userSpaceOnUse"
+                                            >
+                                                <stop stop-color="#FFC300" />
+                                                <stop offset="1" stop-color="#DFD8FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                {/* Второй ряд карточек */}
+                                <div className="grid grid-cols-3 gap-7.5 mt-5">
+                                    {datas.slice(3, 6).map((data, index) => (
+                                        <div key={index} className=" w-full max-w-67.5 h-39.75 ">
+                                            <div>
+                                                <div className=" text-xl font-semibold mb-2">
+                                                    {data.title}
+                                                </div>
+                                                <p className="">{data.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
