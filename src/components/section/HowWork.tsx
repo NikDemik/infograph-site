@@ -38,7 +38,9 @@ export default function HowWork() {
                         обеспечивающая стабильный результат.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-7.5">
+
+                {/* Контент десктоп */}
+                <div className=" hidden md:grid grid-cols-1 md:grid-cols-4 gap-7.5">
                     <div className=" col-span-1 hidden xl:flex">
                         <Image
                             src="/img/how-work.png"
@@ -47,14 +49,14 @@ export default function HowWork() {
                             alt="Инфографика как мы работаем"
                         />
                     </div>
-                    <div className=" hidden md:grid col-span-4 col-start-1 xl:col-span-3 xl:col-start-2 ">
+                    <div className="grid col-span-4 col-start-1 xl:col-span-3 xl:col-start-2 ">
                         <div className="flex flex-col gap-28">
-                            {/* Первые три карточки */}
+                            {/* Карточки с 1-3 */}
                             <div className="w-full">
                                 {/* Первая полоса */}
                                 <div className="pr-[17vw]">
                                     <svg
-                                        className="w-full h-10"
+                                        className="w-full h-10 max-w-205.25"
                                         viewBox="0 0 821 40"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -102,8 +104,7 @@ export default function HowWork() {
                                         </defs>
                                     </svg>
                                 </div>
-
-                                {/*Первые три карточки */}
+                                {/*Первые ряд карточки */}
                                 <div className="grid grid-cols-3 gap-7.5 mt-5">
                                     {datas.slice(0, 3).map((data, index) => (
                                         <div key={index} className=" w-full max-w-67.5 h-39.75 ">
@@ -164,6 +165,9 @@ export default function HowWork() {
                         </div>
                     </div>
                 </div>
+
+                {/* Контент мобильный */}
+                <div className=" flex md:hidden justify-between"></div>
             </div>
         </section>
     );
