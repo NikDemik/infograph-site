@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Button } from '../ui/button';
 
 export default function HowWork() {
     const datas = [
@@ -167,7 +168,110 @@ export default function HowWork() {
                 </div>
 
                 {/* Контент мобильный */}
-                <div className=" flex md:hidden justify-between"></div>
+                <div className=" flex md:hidden justify-start mt-10 gap-5">
+                    <svg
+                        width="26"
+                        height="851"
+                        viewBox="0 0 26 851"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M15.0355 439.862L15.0355 12.7682L9.92829 12.7682L9.92827 439.862L15.0355 439.862Z"
+                            fill="url(#paint0_linear_2105_123)"
+                        />
+                        <circle
+                            cx="12.5178"
+                            cy="12.5178"
+                            r="12.5178"
+                            transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 25.0355 25.0356)"
+                            fill="#694FD7"
+                        />
+                        <circle
+                            cx="12.5178"
+                            cy="12.5178"
+                            r="12.5178"
+                            transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 25.0355 190.071)"
+                            fill="#AE9BDC"
+                        />
+                        <circle
+                            cx="12.5178"
+                            cy="12.5178"
+                            r="12.5178"
+                            transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 25.0355 355.107)"
+                            fill="#DED0DF"
+                        />
+                        <path
+                            d="M15.0355 846.072L15.0355 425.072L10.0355 425.072L10.0355 846.072L15.0355 846.072Z"
+                            fill="url(#paint1_linear_2105_123)"
+                        />
+                        <circle
+                            cx="12.5178"
+                            cy="12.5178"
+                            r="12.5178"
+                            transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 25.0355 520.143)"
+                            fill="#E0D7F6"
+                        />
+                        <circle
+                            cx="12.5178"
+                            cy="12.5178"
+                            r="12.5178"
+                            transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 25.0355 850.214)"
+                            fill="#FCC105"
+                        />
+                        <circle
+                            cx="12.5178"
+                            cy="12.5178"
+                            r="12.5178"
+                            transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 25.0355 685.178)"
+                            fill="#F2CC67"
+                        />
+                        <defs>
+                            <linearGradient
+                                id="paint0_linear_2105_123"
+                                x1="12.4819"
+                                y1="439.862"
+                                x2="12.4819"
+                                y2="12.7682"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop stop-color="#E3D5DF" />
+                                <stop offset="1" stop-color="#694FD7" />
+                            </linearGradient>
+                            <linearGradient
+                                id="paint1_linear_2105_123"
+                                x1="12.5355"
+                                y1="846.072"
+                                x2="12.5355"
+                                y2="425.072"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop stop-color="#FFC300" />
+                                <stop offset="1" stop-color="#DFD8FF" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div>
+                        {datas.map((data, index) => (
+                            <div
+                                key={index}
+                                className={`w-full max-w-67.5 ${index < 5 ? 'h-41' : 'h-auto'}`}
+                            >
+                                <div>
+                                    <div className=" text-xl font-semibold mb-2">{data.title}</div>
+                                    <p className="">{data.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Кнопка Связаться с нами  */}
+                <div className="mt-10 md:mt-0 flex md:justify-end">
+                    <Button value="default" size="default">
+                        связать с нами
+                    </Button>
+                </div>
             </div>
         </section>
     );

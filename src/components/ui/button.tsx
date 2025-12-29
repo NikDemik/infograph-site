@@ -8,12 +8,13 @@ const buttonVariants = cva(
         variants: {
             variant: {
                 default:
-                    'text-[1.25rem] hover:bg-black hover:text-white active:scale-95 active:text-[1.35rem]',
+                    'text-[1.25rem] hover:bg-black hover:text-white active:scale-95 active:text-[1.2rem]',
                 home: 'text-xl md:text-[2.5vw] font-bold hover:bg-black hover:text-white active:scale-95 active:text-[2.6vw]',
             },
             size: {
                 default: 'w-[360px] h-[61px] rounded-3xl',
                 home: 'w-full h-[74px] md:h-[7.6vw] md:min-h-[74px] rounded-4xl md:rounded-3xl',
+                small: 'px-6 py-1 rounded-3xl',
             },
         },
         defaultVariants: {

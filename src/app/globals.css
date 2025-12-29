@@ -11,11 +11,14 @@
 	--black: #000;
   --white: #fff;
   --gray: #6c6c6c;
+  --gray-pantone: #aeaeae;
   --gray-light: #f4f5f7;
+  --yellow: #fcc105;
 
-  --color-gradient: linear-gradient(1deg, #a9b0ff 0%, #f1f1f1 100%);
+  --bg-input: #e9ecf0;
 
-  --shadow-main: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  --border: #dfe0e2;
+
 }  
 
 @theme inline {
@@ -27,12 +30,20 @@
   --color-black: var(--black);
   --color-white: var(--white);
   --color-gray: var(--gray);
+  --color-gray-pantone: var(--gray-pantone);
   --color-gray-light: var(--gray-light);
+  --color-yellow: var(--yellow);
+
+  --color-bg-input: var(--bg-input);
 
   --shadow-main: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   --font-sf: var(--font-sf);
   --font-inter: var(--font-inter);
+
+  --color-border: var(--border);
+
+  --background-image-gradient-custom: linear-gradient(90deg, #e2e8ff 0%, rgba(197, 184, 255, 0) 89.9%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,7 +64,7 @@
     }
 
     p {
-      @apply text-[1.125rem] md:text-xl text-gray font-normal leading-5.5
+      @apply text-[1.125rem] lg:text-xl text-gray font-normal leading-5.5
     }
 
     a {
