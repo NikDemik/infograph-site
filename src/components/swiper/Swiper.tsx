@@ -31,7 +31,7 @@ export default function MySwiper() {
             >
                 <SwiperSlide>
                     <Image
-                        src="/slider/slide-1.png"
+                        src="/products/slide-1.png"
                         width={324}
                         height={431}
                         alt="Наши работы слайд 1"
@@ -39,7 +39,7 @@ export default function MySwiper() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
-                        src="/slider/slide-2.png"
+                        src="/products/slide-2.png"
                         width={324}
                         height={431}
                         alt="Наши работы слайд 2"
@@ -47,7 +47,7 @@ export default function MySwiper() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
-                        src="/slider/slide-3.png"
+                        src="/products/slide-3.png"
                         width={324}
                         height={431}
                         alt="Наши работы слайд 3"
@@ -55,7 +55,7 @@ export default function MySwiper() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
-                        src="/slider/slide-4.png"
+                        src="/products/slide-4.png"
                         width={324}
                         height={431}
                         alt="Наши работы слайд 4"
@@ -63,7 +63,7 @@ export default function MySwiper() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Image
-                        src="/slider/slide-5.png"
+                        src="/products/slide-5.png"
                         width={324}
                         height={431}
                         alt="Наши работы слайд 5"

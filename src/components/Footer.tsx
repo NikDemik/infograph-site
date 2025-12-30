@@ -15,8 +15,7 @@ export default function Footer() {
                     <Image src={'/logo/logo.svg'} width={100} height={52} alt="Логотип сайта" />
                 </Link>
 
-                {/* ДЕСКТОП МЕНЮ */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:text-lg">
+                <div className="flex flex-col-reverse md:grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:text-lg">
                     <ul className="flex flex-col gap-1">
                         <li>
                             <Link href="/" className={isActive('/') ? 'text-active' : 'hover'}>

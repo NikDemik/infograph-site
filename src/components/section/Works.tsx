@@ -2,12 +2,13 @@
 
 import { Button } from '../ui/button';
 import MySwiper from '../swiper/Swiper';
+import Link from 'next/link';
 export default function Works() {
     return (
         <section className=" relative z-10 mt-[8.5vw]">
             <h2>Каталог работ</h2>
             <div className=" flex flex-col gap-5">
-                <div className='flex justify-between '>
+                <div className="flex justify-between ">
                     <p className=" mt-5 hidden md:block">
                         Подборка реализованных проектов, демонстрирующая
                         <br />
@@ -16,11 +17,10 @@ export default function Works() {
                 </div>
 
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-
                     {/* Кнопка - показывается только на xl+ экранах в сетке */}
                     <div className="hidden xl:flex col-span-1 xl:items-end ">
-                        <Button variant="default" size="default">
-                            смотреть все работы
+                        <Button variant="default" size="default" asChild>
+                            <Link href="/catalogs">смотреть все работы</Link>
                         </Button>
                     </div>
 
@@ -31,8 +31,8 @@ export default function Works() {
 
                     {/* Кнопка для экранов меньше 1280px - показывается под swiper */}
                     <div className="flex xl:hidden justify-start mt-5 w-full">
-                        <Button variant="default" size="default">
-                            смотреть все работы
+                        <Button variant="default" size="default" asChild>
+                            <Link href="/catalogs">смотреть все работы</Link>
                         </Button>
                     </div>
                 </div>
