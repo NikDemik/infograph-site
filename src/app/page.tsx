@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { SectionShell } from '@/components/layout/SectionShell';
 import About from '@/components/section/About';
@@ -25,6 +26,7 @@ export default function Home() {
                 <Deadlines />
                 <Contacts />
             </SectionShell>
+            <Footer />
         </>
     );
 }
