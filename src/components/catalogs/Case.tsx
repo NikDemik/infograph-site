@@ -1,8 +1,8 @@
 'use client';
 
-import { Button } from '../ui/button';
-import Link from 'next/link';
 import Image from 'next/image';
+import ContactFormModal from '../modals/ContactFormModal';
+import ContactManager from '../modals/ContactManager';
 
 const cases = [
     {
@@ -56,7 +56,7 @@ export default function Case({ caseId }) {
     }
 
     return (
-        <section className=" relative z-10 mb-[5.5vw]">
+        <section className=" relative z-0 mb-[5.5vw]">
             <h2>
                 {targetCase?.case}
                 <span style={{ color: targetCase?.color }}> (Тариф "{targetCase?.title}")</span>
@@ -86,9 +86,10 @@ export default function Case({ caseId }) {
                 </div>
 
                 {/* Кнопка*/}
-                <Button variant="default" size="default" asChild>
+                {/* <Button variant="default" size="default" asChild>
                     <Link href="#">заказать карточку товара</Link>
-                </Button>
+                </Button> */}
+                <ContactManager />
             </div>
         </section>
     );

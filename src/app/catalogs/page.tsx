@@ -3,6 +3,7 @@
 import Case from '@/components/catalogs/Case';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import MobileContactModal from '@/components/modals/ContactFormModal';
 import { Button } from '@/components/ui/button';
 
 import Link from 'next/link';
