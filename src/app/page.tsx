@@ -12,21 +12,21 @@ import Price from '@/components/section/Price';
 import Works from '@/components/section/Works';
 
 export default function Home() {
-    return (
-        <>
-            <Header />
-            <SectionShell>
-                <HeroBanner />
-                <ButtonHome />
-                <About />
-                <Works />
-                <HowWork />
-                <Price />
-                <Plans />
-                <Deadlines />
-                <Contacts />
-            </SectionShell>
-            <Footer />
-        </>
-    );
+	return (
+		<>
+			<Header />
+			<SectionShell>
+				<HeroBanner />
+				<ButtonHome />
+				<About />
+				<Works />
+				<HowWork />
+				<Price />
+				<Plans />
+				<Deadlines />
+				<Contacts />
+			</SectionShell>
+			<Footer />
+		</>
+	);
 }
