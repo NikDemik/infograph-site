@@ -1,8 +1,8 @@
 'use client'
 
+import { useState } from 'react';
 import ContactFormModal from '../modals/ContactFormModal';
 import { Button } from '../ui/button';
-import { useState } from 'react';
 
 export default function ButtonHome() {
     const [isContactOpen, setIsContactOpen] = useState(false);

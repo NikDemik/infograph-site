@@ -46,7 +46,11 @@ const cases = [
     },
 ];
 
-export default function Case({ caseId }) {
+interface CaseProps {
+    caseId: string;
+}
+
+export default function Case({ caseId }: CaseProps) {
     // Находим нужный case по переданному id
     const targetCase = cases.find((c) => c.id === caseId);
 

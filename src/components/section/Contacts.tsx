@@ -2,13 +2,16 @@ import ContactForm from '../contact/ContactForm';
 
 export default function Contacts() {
     const contacts = [
-        { type: 'site', value: 'okdesign.ru' },
-        { type: 'phone', value: '+7 (xxx) xxx-xx-xx' },
-        { type: 'mail', value: ' info@okdesign.ru' },
+        { type: 'site', value: 'dizain-kartochek.ru' },
+        { type: 'phone', value: '+7 (499) 322-94-41' },
+        { type: 'mail', value: ' info@dizain-kartochek.ru' },
     ];
 
     return (
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-7.5 relative z-10 mt-[8.5vw] ">
+        <section
+            id="contact"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-7.5 relative z-10 mt-[8.5vw] "
+        >
             <div className=" col-span-1 lg:col-span-3">
                 <h2>Контакты</h2>
                 <div className=" mt-5 lg:mt-36 w-full flex flex-col gap-5 ">

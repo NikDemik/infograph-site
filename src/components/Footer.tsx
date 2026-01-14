@@ -43,12 +43,12 @@ export default function Footer() {
                     <ul className="flex flex-col gap-1">
                         <li>
                             <Link href="/" className={isActive('#') ? 'text-active' : 'hover'}>
-                                Телефон: +7 (xxx) xxx-xx-xx
+                                Телефон: +7 (499) 322-94-41
                             </Link>
                         </li>
                         <li>
                             <Link href="/" className={isActive('#') ? 'text-active' : 'hover'}>
-                                Email: info@okdesign.ru
+                                Email: info@dizain-kartochek.ru
                             </Link>
                         </li>
                     </ul>

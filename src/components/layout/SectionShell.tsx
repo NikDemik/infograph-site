@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function SectionShell({ children }: { children: React.ReactNode }) {
     return (
-        <section className="relative overflow-visible">
+        <section className="relative overflow-visible mt-32">
             {/* ФОНОВЫЕ ОБЪЕКТЫ */}
             <div className="absolute inset-0 -z-10 pointer-events-none">
                 {/* Объект 1 — синяя звезда */}

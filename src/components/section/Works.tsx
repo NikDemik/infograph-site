@@ -5,7 +5,7 @@ import MySwiper from '../swiper/Swiper';
 import Link from 'next/link';
 export default function Works() {
     return (
-        <section className=" relative z-10 mt-[8.5vw]">
+        <section id="works" className=" relative z-10 mt-[8.5vw]">
             <h2>Каталог работ</h2>
             <div className=" flex flex-col gap-5">
                 <div className="flex justify-between ">

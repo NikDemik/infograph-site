@@ -1,7 +1,12 @@
+'use client';
+
+import { useState } from 'react';
+import ContactFormModal from '../modals/ContactFormModal';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 
 export default function HowWork() {
+    const [isContactOpen, setIsContactOpen] = useState(false);
     const datas = [
         {
             title: 'Брифинг и анализ товара',
@@ -26,7 +31,7 @@ export default function HowWork() {
         { title: 'Все!', desc: '' },
     ];
     return (
-        <section className="relative z-10 mt-[4.5vw] md:py-11 md:bg-gray-light">
+        <section id="how-work" className="relative z-10 mt-[4.5vw] md:py-11 md:bg-gray-light">
             {/* Фон, который выходит за пределы контейнера */}
             <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen md:bg-gray-light -z-10" />
 
@@ -268,9 +273,14 @@ export default function HowWork() {
 
                 {/* Кнопка Связаться с нами  */}
                 <div className="mt-10 md:mt-0 flex md:justify-end">
-                    <Button value="default" size="default">
+                    <Button value="default" size="default" onClick={() => setIsContactOpen(true)}>
                         связать с нами
                     </Button>
+                    {/* Модальное окно контактов */}
+                    <ContactFormModal
+                        isOpen={isContactOpen}
+                        onClose={() => setIsContactOpen(false)}
+                    />
                 </div>
             </div>
         </section>

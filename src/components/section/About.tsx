@@ -6,7 +6,7 @@ export default function About() {
     ];
 
     return (
-        <section className=" relative z-10 mt-[8.5vw] hidden md:block">
+        <section id="about" className=" relative z-10 mt-[8.5vw] hidden md:block">
             <h2>О нас</h2>
             <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <p className=" mt-5">

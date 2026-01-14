@@ -1,6 +1,11 @@
+'use client';
+
+import { useState } from 'react';
+import ContactFormModal from '../modals/ContactFormModal';
 import { Button } from '../ui/button';
 
 export default function Price() {
+    const [isContactOpen, setIsContactOpen] = useState(false);
     const prices = [
         {
             title: 'Минимум',
@@ -31,7 +36,7 @@ export default function Price() {
         },
     ];
     return (
-        <section className=" relative z-10 mt-[8.5vw]">
+        <section id="price" className=" relative z-10 mt-[8.5vw]">
             <h2>Стоимость</h2>
             <div className=" flex flex-col gap-5">
                 <div className="flex justify-between flex-col lg:flex-row gap-7.5 mt-10">
@@ -52,9 +57,20 @@ export default function Price() {
                                 ))}
                             </div>
                             <div className=" mt-auto">
-                                <Button value="default" size="default" className=" mt-5 w-full">
+                                <Button
+                                    value="default"
+                                    size="default"
+                                    className=" mt-5 w-full"
+                                    onClick={() => setIsContactOpen(true)}
+                                >
                                     {price.button}
                                 </Button>
+
+                                {/* Модальное окно контактов */}
+                                <ContactFormModal
+                                    isOpen={isContactOpen}
+                                    onClose={() => setIsContactOpen(false)}
+                                />
                             </div>
                         </div>
                     ))}

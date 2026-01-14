@@ -43,30 +43,39 @@ export default function ContactForm() {
             className="w-full rounded-3xl bg-gray-light shadow-main px-8 py-5 md:p-14"
         >
             {/* top inputs */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-5 md:gap-8 md:grid-cols-2">
                 <div>
-                    <label className="mb-2 block font-inter text-sm text-gray-pantone">Имя</label>
+                    <label className="mb-2 hidden md:block font-inter text-sm text-gray-pantone">
+                        Имя
+                    </label>
                     <input
                         {...register('name', { required: true })}
-                        className="h-7 w-full rounded-full bg-bg-input px-4 text-sm outline-none transition focus:bg-active-light"
+                        placeholder="Имя"
+                        className=" h-10 md:h-7 w-full rounded-full bg-bg-input px-4 text-sm outline-none transition placeholder:text-gray-pantone focus:bg-active-light"
                     />
                 </div>
 
                 <div>
-                    <label className="mb-2 block font-inter text-sm text-gray-pantone">Email</label>
+                    <label className="mb-2 hidden md:block font-inter text-sm text-gray-pantone">
+                        Email
+                    </label>
                     <input
                         {...register('email', {
                             required: true,
                             pattern: /^\S+@\S+$/,
                         })}
-                        className="h-7 w-full rounded-full bg-bg-input px-4 text-sm outline-none transition focus:bg-active-light"
+                        type="email"
+                        placeholder="Email"
+                        className=" h-10 md:h-7 w-full rounded-full bg-bg-input px-4 text-sm outline-none transition placeholder:text-gray-pantone focus:bg-active-light"
                     />
                 </div>
             </div>
 
             {/* message */}
-            <div className="mt-5">
-                <label className="mb-2 block font-inter text-sm text-gray-pantone">Сообщение</label>
+            <div className=" mt-8 md:mt-5">
+                <label className="mb-2 hidden md:block font-inter text-sm text-gray-pantone">
+                    Сообщение
+                </label>
                 <textarea
                     {...register('message', { required: true })}
                     placeholder="Опишите задачу или задайте вопрос"

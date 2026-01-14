@@ -12,7 +12,7 @@ export default function Home() {
     return (
         <>
             <Header />
-            <div className=" relative z-10 mt-[3.5vw]">
+            <div className=" relative z-10  mt-14 md:mt-32">
                 <Button variant="default" size="small" asChild className="mb-10">
                     <Link href="/">на главную</Link>
                 </Button>
