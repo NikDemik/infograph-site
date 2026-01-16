@@ -3,7 +3,7 @@ import ContactForm from '../contact/ContactForm';
 export default function Contacts() {
     const contacts = [
         { type: 'site', value: 'dizain-kartochek.ru' },
-        { type: 'phone', value: '+7 (499) 322-94-41' },
+        { type: 'phone', value: '+7 (991) 588-41-93' },
         { type: 'mail', value: ' info@dizain-kartochek.ru' },
     ];
 

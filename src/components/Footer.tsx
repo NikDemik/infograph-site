@@ -43,7 +43,7 @@ export default function Footer() {
                     <ul className="flex flex-col gap-1">
                         <li>
                             <Link href="/" className={isActive('#') ? 'text-active' : 'hover'}>
-                                Телефон: +7 (499) 322-94-41
+                                Телефон: +7 (991) 588-41-93
                             </Link>
                         </li>
                         <li>
