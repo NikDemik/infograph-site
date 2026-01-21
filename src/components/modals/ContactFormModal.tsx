@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import ContactForm from '@/components/contact/ContactForm';
+import ContactFormTelegram from '@/components/contact/ContactFormTelegram';
 import { X } from 'lucide-react';
 import { Button } from '../ui/button';
 import Portal from './Portal';
@@ -64,7 +64,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                         <h2 className="text-center mb-5">Заполните форму заказа</h2>
 
                         {/* Форма */}
-                        <ContactForm />
+                        <ContactFormTelegram />
                     </div>
                 </div>
             </Portal>

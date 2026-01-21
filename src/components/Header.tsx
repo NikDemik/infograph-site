@@ -1,5 +1,7 @@
 'use client';
 
+import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/utils/motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -139,15 +141,26 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 left-0 right-0 w-full z-50 hidden md:block backdrop-blur">
-            <div className="max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8">
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                className="max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8"
+            >
                 <div className="flex justify-between items-center h-20">
                     {/* ЛОГОТИП */}
-                    <Link href="/">
-                        <Image src={'/logo/logo.svg'} width={100} height={52} alt="Логотип сайта" />
-                    </Link>
+                    <motion.div variants={slideInFromLeft(0.6)}>
+                        <Link href="/">
+                            <Image
+                                src={'/logo/logo.svg'}
+                                width={100}
+                                height={54}
+                                alt="Логотип сайта"
+                            />
+                        </Link>
+                    </motion.div>
 
                     {/* ДЕСКТОП МЕНЮ */}
-                    <nav>
+                    <motion.nav variants={slideInFromRight(0.6)}>
                         <ul className="flex text-lg gap-11">
                             <li>
                                 <a
@@ -209,9 +222,9 @@ export default function Header() {
                                 </a>
                             </li>
                         </ul>
-                    </nav>
+                    </motion.nav>
                 </div>
-            </div>
+            </motion.div>
         </header>
     );
 }

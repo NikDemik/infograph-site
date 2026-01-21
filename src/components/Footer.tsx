@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex justify-between items-center py-5">
                 {/* ЛОГОТИП */}
                 <Link href="/">
-                    <Image src={'/logo/logo.svg'} width={100} height={52} alt="Логотип сайта" />
+                    <Image src={'/logo/logo.svg'} width={100} height={54} alt="Логотип сайта" />
                 </Link>
 
                 <div className="flex flex-col-reverse md:grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:text-lg">

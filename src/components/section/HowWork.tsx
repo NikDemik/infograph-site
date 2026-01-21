@@ -104,8 +104,8 @@ export default function HowWork() {
                                                 y2="4"
                                                 gradientUnits="userSpaceOnUse"
                                             >
-                                                <stop stop-color="#E3D5DF" />
-                                                <stop offset="1" stop-color="#694FD7" />
+                                                <stop stopColor="#E3D5DF" />
+                                                <stop offset="1" stopColor="#694FD7" />
                                             </linearGradient>
                                         </defs>
                                     </svg>
@@ -148,8 +148,8 @@ export default function HowWork() {
                                                 y2="19.6079"
                                                 gradientUnits="userSpaceOnUse"
                                             >
-                                                <stop stop-color="#FFC300" />
-                                                <stop offset="1" stop-color="#DFD8FF" />
+                                                <stop stopColor="#FFC300" />
+                                                <stop offset="1" stopColor="#DFD8FF" />
                                             </linearGradient>
                                         </defs>
                                     </svg>
@@ -240,8 +240,8 @@ export default function HowWork() {
                                 y2="12.7682"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#E3D5DF" />
-                                <stop offset="1" stop-color="#694FD7" />
+                                <stop stopColor="#E3D5DF" />
+                                <stop offset="1" stopColor="#694FD7" />
                             </linearGradient>
                             <linearGradient
                                 id="paint1_linear_2105_123"
@@ -251,8 +251,8 @@ export default function HowWork() {
                                 y2="425.072"
                                 gradientUnits="userSpaceOnUse"
                             >
-                                <stop stop-color="#FFC300" />
-                                <stop offset="1" stop-color="#DFD8FF" />
+                                <stop stopColor="#FFC300" />
+                                <stop offset="1" stopColor="#DFD8FF" />
                             </linearGradient>
                         </defs>
                     </svg>

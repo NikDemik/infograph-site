@@ -13,20 +13,20 @@ import Works from '@/components/section/Works';
 
 export default function Home() {
 	return (
-		<>
-			<Header />
-			<SectionShell>
-				<HeroBanner />
-				<ButtonHome />
-				<About />
-				<Works />
-				<HowWork />
-				<Price />
-				<Plans />
-				<Deadlines />
-				<Contacts />
-			</SectionShell>
-			<Footer />
-		</>
-	);
+        <>
+            <Header />
+            <SectionShell>
+                <HeroBanner />
+                <ButtonHome />
+                <About />
+                <Works />
+                <HowWork />
+                <Price />
+                <Plans />
+                <Deadlines />
+                <Contacts />
+            </SectionShell>
+            <Footer />
+        </>
+    );
 }

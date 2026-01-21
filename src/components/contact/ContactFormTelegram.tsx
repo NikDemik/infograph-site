@@ -139,7 +139,7 @@ export default function ContactForm() {
                             Нажимая на галочку, вы соглашаетесь с{' '}
                             <a
                                 href="/privacy-policy"
-                                className="text-blue-600 hover:underline"
+                                className="text-active hover:underline"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -148,7 +148,7 @@ export default function ContactForm() {
                             и даёте согласие на обработку персональных данных.
                         </p>
                         {errors.agreement && (
-                            <p className="mt-1 text-xs text-red-500">{errors.agreement.message}</p>
+                            <p className="mt-2 text-xs text-red-500">{errors.agreement.message}</p>
                         )}
                     </div>
                 </label>
