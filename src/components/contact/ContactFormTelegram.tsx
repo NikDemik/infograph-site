@@ -23,7 +23,8 @@ export default function ContactForm() {
     const [error, setError] = useState<string | null>(null);
 
     // 🔥 URL вашего API на Vercel
-    const VERCEL_API_URL = process.env.NEXT_PUBLIC_API_URL;
+    const VERCEL_API_URL =
+        process.env.NEXT_PUBLIC_API_URL || 'https://infograph-site.vercel.app/api/contact';
 
     const onSubmit = async (data: FormValues) => {
         setSuccess(false);
