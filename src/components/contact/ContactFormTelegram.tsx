@@ -3,6 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { Button } from '../ui/button';
+import { API_CONFIG } from '@/config/api';
 
 type FormValues = {
     name: string;
@@ -22,16 +23,12 @@ export default function ContactForm() {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    // 🔥 URL вашего API на Vercel
-    const VERCEL_API_URL =
-        process.env.NEXT_PUBLIC_API_URL || 'https://infograph-site.vercel.app/api/contact';
-
     const onSubmit = async (data: FormValues) => {
         setSuccess(false);
         setError(null);
 
         try {
-            const res = await fetch(VERCEL_API_URL, {
+            const res = await fetch(API_CONFIG.contact, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
