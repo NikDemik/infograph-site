@@ -40,6 +40,7 @@ export default function ContactForm() {
                     name: data.name,
                     email: data.email,
                     message: data.message,
+                    agreement: data.agreement,
                 }),
             });
 

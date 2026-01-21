@@ -22,6 +22,11 @@ export async function POST(request: NextRequest) {
             );
         }
 
+        // 🔥 Проверяем что согласие действительно true
+        if (agreement !== true) {
+            return NextResponse.json({ error: 'Необходимо принять соглашение' }, { status: 400 });
+        }
+
         /**
          * Здесь можно:
          * - сохранить в БД (Prisma)
