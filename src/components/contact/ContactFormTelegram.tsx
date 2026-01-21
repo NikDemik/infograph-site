@@ -41,13 +41,7 @@ export default function ContactFormTelegram() {
             const res = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: data.name.trim(),
-                    email: data.email.trim(),
-                    message: data.message.trim(),
-                    timestamp: new Date().toISOString(),
-                    source: 'website_contact_form',
-                }),
+                body: JSON.stringify({ data }),
             });
 
             const result = await res.json();

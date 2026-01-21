@@ -10,7 +10,7 @@ export async function sendToTelegram(formData: FormData) {
     const API_URL = process.env.NEXT_PUBLIC_CONTACT_API_URL;
 
     // Отправка на ваш backend/сервис
-    const response = await fetch('https://infograph-site.vercel.app/api/contact/route', {
+    const response = await fetch('https://infograph-site.vercel.app/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
