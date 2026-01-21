@@ -1,5 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Для Vercel настройки CORS
+const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+};
+
+export async function OPTIONS(request: NextRequest) {
+    return NextResponse.json({}, { headers: corsHeaders });
+}
+
 export async function POST(request: NextRequest) {
     try {
         // Получаем данные из формы
@@ -34,22 +45,7 @@ export async function POST(request: NextRequest) {
             Имя: ${name}
             Email: ${email}
             Сообщение: ${message}
-            `;
-
-        // Отправляем в Telegram
-        // const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({
-        //         chat_id: CHAT_ID,
-        //         text: telegramMessage,
-        //         parse_mode: 'HTML',
-        //     }),
-        // });
-
-        // console.log('New contact request:', { name, email, message });
-
-        // const data = await response.json();
+            `;        
 
         // Отправляем в Telegram
         const telegramResponse = await fetch(
@@ -79,12 +75,12 @@ export async function POST(request: NextRequest) {
         if (data.ok) {
             return NextResponse.json(
                 { success: true, message: 'Сообщение отправлено!' },
-                { status: 200 },
+                { status: 200, headers: corsHeaders }
             );
         } else {
-            return NextResponse.json({ error: 'Ошибка отправки в Telegram' }, { status: 500 });
+            return NextResponse.json({ error: 'Ошибка отправки в Telegram' }, { status: 500, headers: corsHeaders });
         }
     } catch {
-        return NextResponse.json({ error: 'Внутренняя ошибка сервера' }, { status: 500 });
+        return NextResponse.json({ error: 'Внутренняя ошибка сервера' }, { status: 500, headers: corsHeaders });
     }
 }
