@@ -1,4 +1,5 @@
 import ContactForm from '../contact/ContactForm';
+import ContactFormTelegram from '../contact/ContactFormTelegram';
 
 export default function Contacts() {
     const contacts = [
@@ -23,7 +24,7 @@ export default function Contacts() {
                 </div>
             </div>
             <div className=" mt-3 col-span-1 lg:col-span-7 lg:col-start-5">
-                <ContactForm />
+                <ContactFormTelegram />
             </div>
         </section>
     );

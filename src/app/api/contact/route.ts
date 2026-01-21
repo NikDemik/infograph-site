@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
         // Формируем сообщение
         const telegramMessage = `
-            📨 Новая заявка!
+            📨 Новая заявка (old)!
             Имя: ${name}
             Email: ${email}
             Сообщение: ${message}

@@ -2,7 +2,6 @@
 
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { Checkbox } from '../ui/checkbox';
 import { Button } from '../ui/button';
 
 type FormValues = {
