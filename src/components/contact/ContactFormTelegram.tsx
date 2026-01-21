@@ -11,37 +11,35 @@ type FormValues = {
     agreement: boolean;
 };
 
-export default function ContactFormTelegram() {
+export default function ContactForm() {
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
         reset,
-        watch,
-    } = useForm<FormValues>({
-        mode: 'onChange', // Валидация при изменении
-    });
+    } = useForm<FormValues>();
 
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    // Следим за согласием для стилизации кнопки
-    const hasAgreement = watch('agreement');
+    // 🔥 URL вашего API на Vercel
+    const VERCEL_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     const onSubmit = async (data: FormValues) => {
         setSuccess(false);
         setError(null);
 
         try {
-            // URL вашего сервера или сервиса
-            const API_URL =
-                process.env.NEXT_PUBLIC_CONTACT_API_URL ||
-                'https://infograph-site.vercel.app/api/contact';
-
-            const res = await fetch(API_URL, {
+            const res = await fetch(VERCEL_API_URL, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ data }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: data.name,
+                    email: data.email,
+                    message: data.message,
+                }),
             });
 
             const result = await res.json();
@@ -66,24 +64,16 @@ export default function ContactFormTelegram() {
             onSubmit={handleSubmit(onSubmit)}
             className="w-full rounded-3xl bg-gray-light shadow-main px-8 py-5 md:p-14"
         >
-            {/* top inputs */}
+            {/* Поля формы (оставьте как были) */}
             <div className="grid grid-cols-1 gap-5 md:gap-8 md:grid-cols-2">
                 <div>
                     <label className="mb-2 hidden md:block font-inter text-sm text-gray-pantone">
-                        Имя *
+                        Имя
                     </label>
                     <input
-                        {...register('name', {
-                            required: 'Имя обязательно',
-                            minLength: {
-                                value: 2,
-                                message: 'Минимум 2 символа',
-                            },
-                        })}
-                        placeholder="Имя *"
-                        className={`h-10 md:h-7 w-full rounded-full bg-bg-input px-4 text-sm outline-none transition placeholder:text-gray-pantone focus:bg-active-light ${
-                            errors.name ? 'border border-red-500' : ''
-                        }`}
+                        {...register('name', { required: 'Имя обязательно' })}
+                        placeholder="Имя"
+                        className="h-10 md:h-7 w-full rounded-full bg-bg-input px-4 text-sm outline-none transition placeholder:text-gray-pantone focus:bg-active-light"
                     />
                     {errors.name && (
                         <p className="mt-1 text-xs text-red-500">{errors.name.message}</p>
@@ -92,7 +82,7 @@ export default function ContactFormTelegram() {
 
                 <div>
                     <label className="mb-2 hidden md:block font-inter text-sm text-gray-pantone">
-                        Email *
+                        Email
                     </label>
                     <input
                         {...register('email', {
@@ -103,10 +93,8 @@ export default function ContactFormTelegram() {
                             },
                         })}
                         type="email"
-                        placeholder="Email *"
-                        className={`h-10 md:h-7 w-full rounded-full bg-bg-input px-4 text-sm outline-none transition placeholder:text-gray-pantone focus:bg-active-light ${
-                            errors.email ? 'border border-red-500' : ''
-                        }`}
+                        placeholder="Email"
+                        className="h-10 md:h-7 w-full rounded-full bg-bg-input px-4 text-sm outline-none transition placeholder:text-gray-pantone focus:bg-active-light"
                     />
                     {errors.email && (
                         <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>
@@ -114,10 +102,9 @@ export default function ContactFormTelegram() {
                 </div>
             </div>
 
-            {/* message */}
             <div className="mt-8 md:mt-5">
                 <label className="mb-2 hidden md:block font-inter text-sm text-gray-pantone">
-                    Сообщение *
+                    Сообщение
                 </label>
                 <textarea
                     {...register('message', {
@@ -127,25 +114,16 @@ export default function ContactFormTelegram() {
                             message: 'Минимум 10 символов',
                         },
                     })}
-                    placeholder="Опишите задачу или задайте вопрос *"
-                    className={`min-h-48 w-full resize-none rounded-2xl bg-bg-input px-4 py-2.5 text-sm outline-none transition placeholder:text-gray-pantone focus:bg-active-light ${
-                        errors.message ? 'border border-red-500' : ''
-                    }`}
+                    placeholder="Опишите задачу или задайте вопрос"
+                    className="min-h-48 w-full resize-none rounded-2xl bg-bg-input px-4 py-2.5 text-sm outline-none transition placeholder:text-gray-pantone focus:bg-active-light"
                 />
                 {errors.message && (
                     <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>
                 )}
             </div>
 
-            {/* bottom */}
             <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-                <Button
-                    value="default"
-                    size="small"
-                    type="submit"
-                    disabled={isSubmitting || !hasAgreement}
-                    className={!hasAgreement ? 'opacity-50 cursor-not-allowed' : ''}
-                >
+                <Button value="default" size="small" type="submit" disabled={isSubmitting}>
                     {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                 </Button>
 
@@ -180,13 +158,13 @@ export default function ContactFormTelegram() {
             {/* Сообщения */}
             {success && (
                 <div className="mt-4 p-3 rounded-lg bg-green-100 text-green-800 text-sm">
-                    ✓ Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.
+                    ✓ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
                 </div>
             )}
 
             {error && (
                 <div className="mt-4 p-3 rounded-lg bg-red-100 text-red-800 text-sm">
-                    ⚠ {error}. Пожалуйста, попробуйте еще раз или свяжитесь другим способом.
+                    ⚠ Ошибка: {error}
                 </div>
             )}
         </form>
