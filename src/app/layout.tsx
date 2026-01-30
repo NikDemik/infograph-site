@@ -52,9 +52,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ru">
-            <body className={`${interSans.variable} ${sfFont.variable} antialiased`}>
+            <body
+                className={`${interSans.variable} ${sfFont.variable} antialiased dark:bg-gray-800`}
+            >
                 <HeaderMobil />
-                <main className="min-h-screen max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8 dark:bg-black ">
+                <main className="min-h-screen max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8 ">
                     {children}
                 </main>
             </body>

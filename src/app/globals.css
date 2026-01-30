@@ -64,7 +64,7 @@
     }
 
     p {
-      @apply text-[1.125rem] lg:text-xl text-gray font-normal leading-5.5
+      @apply text-[1.125rem] lg:text-xl text-gray font-normal leading-5.5 dark:text-gray-pantone
     }
 
     a {
@@ -77,6 +77,11 @@
 @layer utilities {
   .bg-banner-gradient {
     @apply bg-linear-to-t from-[#a9b0ff] to-[#f1f1f1]
+  }
+
+  .bg-banner-blur {
+    backdrop-filter: blur(50px);
+    background: rgba(217, 217, 217, 0.13);
   }
 
   /* .swiper {

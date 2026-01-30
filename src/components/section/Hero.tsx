@@ -15,12 +15,13 @@ export default function HeroBanner() {
                 <Image src="/img/banner.png" width={1530} height={600} alt="Баннер" />
                 <motion.div
                     variants={slideInFromRight(0.8)}
-                    className="absolute top-[56%] left-[50%]"
+                    className="absolute top-[11%] left-[4%]"
                 >
-                    <h1 className=" text-[2.5vw] font-bold leading-none">
-                        Выйди в ТОП
-                        <br /> — подай заявку уже сегодня
-                    </h1>
+                    {/* <h1 className=" text-[5rem] text-black font-bold leading-none">Инфографика</h1> */}
+                    {/* <p>
+                        Создадим грамотное и стильное оформление вашего товара, основываясь на
+                        анализе конкурентов и ключевых преимуществах продукта
+                    </p> */}
                 </motion.div>
             </motion.div>
         </motion.section>
