@@ -16,7 +16,8 @@ const buttonVariants = cva(
             size: {
                 default: 'w-[360px] h-[61px] rounded-3xl',
                 home: 'w-full h-[74px] md:h-[7.6vw] md:min-h-[74px] rounded-4xl md:rounded-3xl',
-                small: 'px-6 py-1 rounded-3xl',
+                middle: ' w-fit px-12 py-2.5 rounded-full',
+                small: 'w-fit px-6 py-1 rounded-3xl',
                 icon: 'size-8',
             },
         },
