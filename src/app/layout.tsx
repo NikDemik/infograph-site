@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import HeaderMobil from '@/components/Header-mobile';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const interSans = Inter({
     variable: '--font-inter',
@@ -51,14 +52,19 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ru">
-            <body
-                className={`${interSans.variable} ${sfFont.variable} antialiased dark:bg-gray-800`}
-            >
-                <HeaderMobil />
-                <main className="min-h-screen max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8 ">
-                    {children}
-                </main>
+        <html lang="ru" suppressHydrationWarning>
+            <body className={`${interSans.variable} ${sfFont.variable} antialiased `}>
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="light"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <HeaderMobil />
+                    <main className="min-h-screen max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8 ">
+                        {children}
+                    </main>
+                </ThemeProvider>
             </body>
         </html>
     );

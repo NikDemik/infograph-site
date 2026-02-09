@@ -10,11 +10,14 @@ const buttonVariants = cva(
                 default:
                     'text-[1.25rem] hover:bg-black hover:opacity-90 hover:text-white active:scale-95 active:text-[1.2rem]',
                 home: 'text-xl md:text-[2.5vw] font-bold hover:bg-black hover:opacity-90 hover:text-white active:scale-95 active:text-[2.6vw]',
+                outline:
+                    ' border-none focus-visible:none hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 aria-expanded:bg-muted aria-expanded:text-foreground',
             },
             size: {
                 default: 'w-[360px] h-[61px] rounded-3xl',
                 home: 'w-full h-[74px] md:h-[7.6vw] md:min-h-[74px] rounded-4xl md:rounded-3xl',
                 small: 'px-6 py-1 rounded-3xl',
+                icon: 'size-8',
             },
         },
         defaultVariants: {

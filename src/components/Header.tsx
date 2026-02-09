@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState, useRef } from 'react';
+import { ModeToggle } from './mode-toggle';
 
 export default function Header() {
     const pathname = usePathname();
@@ -221,6 +222,7 @@ export default function Header() {
                                     Контакты
                                 </a>
                             </li>
+                            <ModeToggle />
                         </ul>
                     </motion.nav>
                 </div>

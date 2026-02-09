@@ -49,10 +49,11 @@ export default function HowWork() {
                 <div className=" hidden md:grid grid-cols-1 md:grid-cols-4 gap-7.5">
                     <div className=" col-span-1 hidden xl:flex">
                         <Image
-                            src="/img/how-work.png"
-                            width={361}
-                            height={478}
+                            src="/img/how-work-new.png"
+                            width={458}
+                            height={660}
                             alt="Инфографика как мы работаем"
+                            className=" transform scale-130 -translate-x-18 translate-y-22"
                         />
                     </div>
                     <div className="grid col-span-4 col-start-1 xl:col-span-3 xl:col-start-2 ">
