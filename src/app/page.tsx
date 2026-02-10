@@ -10,6 +10,8 @@ import HowWork from '@/components/section/HowWork';
 import NewHero from '@/components/section/NewHero';
 import Plans from '@/components/section/Plans';
 import Price from '@/components/section/Price';
+import Question from '@/components/section/Question';
+import Services from '@/components/section/Services';
 import Works from '@/components/section/Works';
 
 export default function Home() {
@@ -24,8 +26,9 @@ export default function Home() {
                 <Works />
                 <HowWork />
                 <Price />
-                <Plans />
+                <Services />
                 <Deadlines />
+                <Question />
                 <Contacts />
             </SectionShell>
             <Footer />

@@ -18,21 +18,21 @@ export default function Price() {
         {
             tag: 'Повышаем результативность воронки',
             title: 'Второстепенный слайд',
-            img: ['/products/slide-3.png', '/products/prod2-1.png'],
+            img: ['/products/slide-3.png', '/products/prod2-2.png'],
             desc: 'Дополнительные слайды для вашей карточки товара, на которых будут размещены все остальные преимущества',
             price: '1.490 ₽',
         },
         {
             tag: 'Проверка кликабельности',
             title: '3 обложки',
-            img: ['/products/prod3-1.png', '/products/prod2-1.png'],
+            img: ['/products/prod3-1.png', '/products/prod2-4.png', '/products/slide-1.png'],
             desc: 'Разработаем 3 главных слайда для вашего товара в разных стилистиках, чтобы понять, какой дизайн будет показывать наилучшие результаты',
             price: '1.990 ₽',
         },
         {
             tag: 'Оптимально',
             title: 'Обложка + 3 второстепенных слайда',
-            img: ['/products/slide-1.png', '/products/prod2-1.png'],
+            img: ['/products/slide-1.png', '/products/slide-2.png', '/products/slide-4.png'],
             desc: 'Стильная обложка и дополнительные слайды для вашей карточки',
             price: '5.390 ₽',
         },
@@ -69,7 +69,9 @@ export default function Price() {
                             <div className="z-20">
                                 <p className=" max-w-121.5">{price.desc}</p>
                                 <div className="flex flex-col xl:flex-row gap-3.5 mt-2.5">
-                                    <div className="flex items-center w-fit rounded-full bg-active-light px-12 py-2.5 text-black text-3xl font-semibold">
+                                    <div
+                                        className={`flex items-center w-fit rounded-full px-12 py-2.5 text-black text-3xl font-semibold ${index <= 1 ? 'bg-active-light' : 'bg-yellow'} `}
+                                    >
                                         {price.price}
                                         <p className=" font-normal">/Слайд</p>
                                     </div>
@@ -96,7 +98,7 @@ export default function Price() {
                                 const positions = [
                                     'top-[22%] right-[8%] w-37.5 h-52 transform rotate-26',
                                     'top-[15%] right-[24%] w-32 h-40 transform -rotate-12',
-                                    'bottom-[15%] right-[5%] w-28 h-36 transform rotate-15',
+                                    'top-[20%] right-[45%] w-23.5 h-32.5 transform rotate-15',
                                 ];
 
                                 return (

@@ -42,7 +42,7 @@ const sfFont = localFont({
 });
 
 export const metadata: Metadata = {
-    title: 'OK DESIGN',
+    title: 'Карточки для маркетплейсов',
     description: 'Инфографика для товаров',
 };
 
