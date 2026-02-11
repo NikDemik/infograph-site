@@ -5,8 +5,8 @@ import Image from 'next/image';
 import PlusMinusIcon from '@/components/ui/plusMinusIcon';
 
 export default function Question() {
-    const [isContactOpen, setIsContactOpen] = useState(false);
-    const [activeAccordion, setActiveAccordion] = useState<string>('usage');
+    // Храним ID открытого аккордеона (или null, если все закрыты)
+    const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
 
     const handleAccordionToggle = (id: string): void => {
         setActiveAccordion(activeAccordion === id ? '' : id);
@@ -14,18 +14,22 @@ export default function Question() {
 
     const questions = [
         {
+            id: 'q1',
             title: 'Можно ли получить исходники своих слайдов?',
-            answer: 'Мы можем провести Анализ вашей ниши, товара, конкурентов с помощью сервисов аналитики, и дать подробные рекомендации по продвижению вашего товара, и выстроить продающую смысловую нагрузку в вашей карточке.',
+            answer: 'Да! При необходимости мы подготовим и предоставим вам проект от каждого слайда. В таком случае стоимость заказа увеличится на 10%.',
         },
         {
+            id: 'q2',
             title: 'Работаете ли вы по договору?',
-            answer: 'Мы можем провести Анализ вашей ниши, товара, конкурентов с помощью сервисов аналитики, и дать подробные рекомендации по продвижению вашего товара, и выстроить продающую смысловую нагрузку в вашей карточке.',
+            answer: 'Да, при необходимости можем заключить договор! Мы принимаем оплату на расчетный счет, также предоставляем чеки для Физ.лиц и все необходимые закрывающие документы для Юр.лиц.',
         },
         {
+            id: 'q3',
             title: 'Как будет проходить работа?',
-            answer: 'Мы можем провести Анализ вашей ниши, товара, конкурентов с помощью сервисов аналитики, и дать подробные рекомендации по продвижению вашего товара, и выстроить продающую смысловую нагрузку в вашей карточке.',
+            answer: 'После оплаты с вами свяжется менеджер для обсуждения подробного тех.задания на основе референсов по стилистике, чтобы вы и мы понимали, какой результат хотим получить по итогам работы. Далее ваш заказ отправляется в разработку, по готовности отправляется вам, и при необходимости вносятся правки.',
         },
         {
+            id: 'q4',
             title: 'Что делать, если я еще не знаю, какой текст и наполнение будет на каждом из слайдов?',
             answer: 'Мы можем провести Анализ вашей ниши, товара, конкурентов с помощью сервисов аналитики, и дать подробные рекомендации по продвижению вашего товара, и выстроить продающую смысловую нагрузку в вашей карточке.',
         },
@@ -35,44 +39,50 @@ export default function Question() {
         <section id="price" className=" relative z-10 mt-[8.5vw]">
             <h2>Вопросы</h2>
             <div className=" flex flex-col gap-5">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-7.5 mt-14">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-7.5 mt-14 relative">
                     <div className=" flex flex-col gap-7.5 justify-between">
-                        {questions.map((question, index) => (
+                        {questions.map((question) => (
                             <div
-                                key={index}
-                                className=" flex flex-col gap-5 justify-between w-full bg-gray-light rounded-[20px] p-5 shadow-main "
+                                key={question.id}
+                                className=" flex flex-col justify-between w-full bg-gray-light rounded-[20px] px-5 py-3 shadow-main "
                             >
+                                {/* Вопрос */}
                                 <div className=" flex justify-between gap-24 items-center content-center">
                                     <p className=" text-black leading-6 ">{question.title}</p>
-                                    <div className=" bg-black rounded-full w-10 h-10 aspect-square relative">
+                                    <div className="">
                                         <PlusMinusIcon
                                             variant="simple"
                                             color="black"
                                             size="small"
-                                            onToggle={() => handleAccordionToggle('usage')}
+                                            initialState={activeAccordion !== question.id} // Плюс, если не откры
+                                            onToggle={() => handleAccordionToggle(question.id)}
+                                            ariaLabel={
+                                                activeAccordion === question.id
+                                                    ? 'Свернуть ответ'
+                                                    : 'Развернуть ответ'
+                                            }
                                         />
                                     </div>
                                 </div>
+                                {/* Ответ */}
                                 <div
                                     className={`overflow-hidden transition-all duration-300 ${
-                                        activeAccordion === 'usage'
-                                            ? 'max-h-96 opacity-100'
+                                        activeAccordion === question.id
+                                            ? 'max-h-96 opacity-100 mt-3'
                                             : 'max-h-0 opacity-0'
                                     }`}
                                 >
-                                    {question.answer}
+                                    <div className=" border-t-2 border-black w-full"></div>
+                                    <p className=" mt-8 text-black leading-6">{question.answer}</p>
                                 </div>
-                                {/* <p className=" text-[1.25rem] text-black font-semibold">
-                                    от {question.answer} ₽
-                                </p> */}
                             </div>
                         ))}
                     </div>
-                    <div className="hidden lg:block relative">
-                        <div className=" absolute -top-[50%] left-[30%] w-150 h-150 transform ">
+                    <div className="hidden lg:block">
+                        <div className=" absolute -top-[60%] -right-[10%] w-150 h-150 transform pointer-events-none">
                             <Image src="/img/dog.png" fill alt="Крестик маленький" />
                         </div>
-                        <div className=" absolute bottom-0 left-[10%] w-95 h-95 transform pointer-events-none">
+                        <div className=" absolute top-[50%] right-[20%] w-80 h-80 transform pointer-events-none">
                             <Image src="/img/arrow.png" fill alt="Крестик" />
                         </div>
                     </div>
