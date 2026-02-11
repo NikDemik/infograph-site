@@ -5,7 +5,6 @@ import About from '@/components/section/About';
 import ButtonHome from '@/components/section/ButtonMain';
 import Contacts from '@/components/section/Contacts';
 import Deadlines from '@/components/section/Deadlines';
-import HeroBanner from '@/components/section/Hero';
 import HowWork from '@/components/section/HowWork';
 import NewHero from '@/components/section/NewHero';
 import Plans from '@/components/section/Plans';
@@ -19,7 +18,6 @@ export default function Home() {
         <>
             <Header />
             <SectionShell>
-                {/* <HeroBanner /> */}
                 <NewHero />
                 <ButtonHome />
                 <About />

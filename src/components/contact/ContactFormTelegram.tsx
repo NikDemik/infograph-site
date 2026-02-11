@@ -61,7 +61,7 @@ export default function ContactForm() {
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full rounded-3xl bg-gray-light shadow-main px-8 py-5 md:p-14"
+            className="w-full rounded-3xl bg-gray-light opacity-80 shadow-main px-8 py-5 md:p-14"
         >
             {/* Поля формы (оставьте как были) */}
             <div className="grid grid-cols-1 gap-5 md:gap-8 md:grid-cols-2">

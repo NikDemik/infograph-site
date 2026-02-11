@@ -1,24 +1,56 @@
-import ContactForm from '../contact/ContactForm';
+'use client';
+
+import Image from 'next/image';
 import ContactFormTelegram from '../contact/ContactFormTelegram';
+import telegramIcon from '@/assets/svg/telegram.svg';
+import siteIcon from '@/assets/svg/site.svg';
+import phoneIcon from '@/assets/svg/phone.svg';
+import mailIcon from '@/assets/svg/mail.svg';
+import { motion } from 'framer-motion';
 
 export default function Contacts() {
     const contacts = [
-        { type: 'site', value: 'dizain-kartochek.ru' },
-        { type: 'phone', value: '+7 (991) 588-41-93' },
-        { type: 'mail', value: ' info@dizain-kartochek.ru' },
+        { icon: telegramIcon, type: 'telegram', value: 't.me/b2bstudio' },
+        { icon: siteIcon, type: 'site', value: 'dizain-kartochek.ru' },
+        { icon: phoneIcon, type: 'phone', value: '+7 (991) 588-41-93' },
+        { icon: mailIcon, type: 'mail', value: ' info@dizain-kartochek.ru' },
     ];
 
     return (
         <section
             id="contact"
-            className="grid grid-cols-1 lg:grid-cols-12 gap-7.5 relative z-10 mt-[8.5vw] "
+            className=" relative grid grid-cols-1 lg:grid-cols-12 gap-7.5 -10 mt-[8.5vw] "
         >
+            {/* Картинка рядом с текстом десктоп */}
+            <motion.div
+                animate={{
+                    y: [0, -300, 0],
+                    x: [0, 0, 0],
+                    scale: [1, 0.6, 1],
+                }}
+                transition={{
+                    duration: 200,
+                    repeat: Infinity,
+                    ease: 'linear',
+                    delay: 2,
+                }}
+                className=" absolute top-25 right-0 hidden md:block -z-10"
+            >
+                <Image src="/img/spiral.png" width={501} height={501} alt="Картинка фона спираль" />
+            </motion.div>
+
             <div className=" col-span-1 lg:col-span-3">
                 <h2>Контакты</h2>
-                <div className=" mt-5 lg:mt-36 w-full flex flex-col gap-5 ">
+                <div className=" mt-5 lg:mt-14 w-full flex flex-col gap-5 ">
                     {contacts.map((contact, index) => (
-                        <div key={index} className="p-5 pl-14 bg-gradient-custom rounded-3xl">
-                            <p className=" text-[18px] text-black">{contact.value}</p>
+                        <div
+                            key={index}
+                            className="flex justify-start gap-6 p-5 bg-gradient-custom rounded-3xl"
+                        >
+                            <Image src={contact.icon} alt={contact.type} />
+                            <p className=" text-[18px] text-black dark:text-white">
+                                {contact.value}
+                            </p>
                         </div>
                     ))}
                 </div>

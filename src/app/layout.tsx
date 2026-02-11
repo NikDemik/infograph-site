@@ -53,7 +53,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ru" suppressHydrationWarning>
-            <body className={`${interSans.variable} ${sfFont.variable} antialiased `}>
+            <body className={`${interSans.variable} ${sfFont.variable} antialiased`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"
@@ -61,7 +61,7 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     <HeaderMobil />
-                    <main className="min-h-screen max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8 ">
+                    <main className="min-h-screen max-w-(--container-max-width) mx-auto px-5 sm:px-6 lg:px-8">
                         {children}
                     </main>
                 </ThemeProvider>

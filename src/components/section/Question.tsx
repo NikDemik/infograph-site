@@ -79,7 +79,7 @@ export default function Question() {
                         ))}
                     </div>
                     <div className="hidden lg:block">
-                        <div className=" absolute -top-[60%] -right-[10%] w-150 h-150 transform pointer-events-none">
+                        <div className=" absolute -top-[60%] right-0 w-150 h-150 transform pointer-events-none">
                             <Image src="/img/dog.png" fill alt="Крестик маленький" />
                         </div>
                         <div className=" absolute top-[50%] right-[20%] w-80 h-80 transform pointer-events-none">

@@ -4,7 +4,7 @@ export default function Deadlines() {
     return (
         <section className="relative z-10 mt-[8.5vw] py-16 md:py-25.5 md:pl-64">
             {/* Фон, который выходит за пределы контейнера */}
-            <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen bg-gray-light -z-10 rounded-b-3xl md:rounded-b-none" />
+            <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[99vw] bg-gray-light -z-10 rounded-b-3xl md:rounded-b-none" />
 
             {/* Картинка рядом с текстом десктоп */}
             <div className=" absolute -top-25 -left-50 hidden md:block">

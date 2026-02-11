@@ -33,7 +33,7 @@ export default function HowWork() {
     return (
         <section id="how-work" className="relative z-10 mt-[4.5vw] md:py-11 md:bg-gray-light">
             {/* Фон, который выходит за пределы контейнера */}
-            <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen md:bg-gray-light -z-10 dark:bg-gray-900" />
+            <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[99vw] md:bg-gray-light -z-10 dark:bg-gray-900" />
 
             <h2>Как мы работаем</h2>
             <div className=" flex flex-col gap-5">
