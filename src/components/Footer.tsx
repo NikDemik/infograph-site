@@ -18,12 +18,18 @@ export default function Footer() {
                 <div className="flex flex-col-reverse md:grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:text-lg">
                     <ul className="flex flex-col gap-1">
                         <li>
-                            <Link href="/" className={isActive('/') ? 'text-active' : 'hover'}>
+                            <Link
+                                href="/policy"
+                                className={isActive('/policy') ? 'text-active' : 'hover'}
+                            >
                                 Политика конфиденциальности
                             </Link>
                         </li>
                         <li>
-                            <Link href="/" className={isActive('#') ? 'text-active' : 'hover'}>
+                            <Link
+                                href="/user"
+                                className={isActive('/user') ? 'text-active' : 'hover'}
+                            >
                                 Пользовательское соглашение
                             </Link>
                         </li>
