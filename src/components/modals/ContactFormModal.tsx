@@ -31,6 +31,12 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
             if (e.key === 'Escape') onClose();
+            // setTimeout нужен чтобы убрать фокус после закрытия модалки
+            setTimeout(() => {
+                if (document.activeElement instanceof HTMLElement) {
+                    document.activeElement.blur();
+                }
+            }, 0);
         };
 
         if (isOpen) {
@@ -47,7 +53,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
     return (
         <>
             <Portal>
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
                     <div
                         ref={modalRef}
                         className="relative w-full max-w-227.5 rounded-2xl bg-background p-6 shadow-xl"

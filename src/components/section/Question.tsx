@@ -9,7 +9,7 @@ export default function Question() {
     const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
 
     const handleAccordionToggle = (id: string): void => {
-        setActiveAccordion(activeAccordion === id ? '' : id);
+        setActiveAccordion(activeAccordion === id ? null : id);
     };
 
     const questions = [
@@ -41,43 +41,48 @@ export default function Question() {
             <div className=" flex flex-col gap-5">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-7.5 mt-14 relative">
                     <div className=" flex flex-col gap-7.5 justify-between">
-                        {questions.map((question) => (
-                            <div
-                                key={question.id}
-                                className=" flex flex-col justify-between w-full bg-gray-light rounded-[20px] px-5 py-3 shadow-main "
-                            >
-                                {/* Вопрос */}
-                                <div className=" flex justify-between gap-24 items-center content-center">
-                                    <p className=" text-black leading-6 ">{question.title}</p>
-                                    <div className="">
-                                        <PlusMinusIcon
-                                            variant="simple"
-                                            color="black"
-                                            size="small"
-                                            initialState={activeAccordion !== question.id} // Плюс, если не откры
-                                            onToggle={() => handleAccordionToggle(question.id)}
-                                            ariaLabel={
-                                                activeAccordion === question.id
-                                                    ? 'Свернуть ответ'
-                                                    : 'Развернуть ответ'
-                                            }
-                                        />
+                        {questions.map((question) => {
+                            const isOpen = activeAccordion === question.id;
+
+                            return (
+                                <div
+                                    key={question.id}
+                                    className=" flex flex-col justify-between w-full bg-gray-light rounded-[20px] px-5 py-3 shadow-main "
+                                >
+                                    {/* Вопрос */}
+                                    <div className=" flex justify-between gap-24 items-center content-center">
+                                        <p className=" text-black leading-6 ">{question.title}</p>
+                                        <div className="">
+                                            <PlusMinusIcon
+                                                variant="simple"
+                                                color="black"
+                                                size="small"
+                                                initialState={!isOpen} // Плюс, если не открыт
+                                                onToggle={() => handleAccordionToggle(question.id)}
+                                                ariaLabel={
+                                                    isOpen ? 'Свернуть ответ' : 'Развернуть ответ'
+                                                }
+                                            />
+                                        </div>
+                                    </div>
+                                    {/* Ответ */}
+                                    <div
+                                        className={`overflow-hidden transition-all duration-300 ${
+                                            isOpen
+                                                ? 'max-h-96 opacity-100 mt-3'
+                                                : 'max-h-0 opacity-0'
+                                        }`}
+                                    >
+                                        <div className=" border-t-2 border-black w-full"></div>
+                                        <p className=" mt-8 text-black leading-6">
+                                            {question.answer}
+                                        </p>
                                     </div>
                                 </div>
-                                {/* Ответ */}
-                                <div
-                                    className={`overflow-hidden transition-all duration-300 ${
-                                        activeAccordion === question.id
-                                            ? 'max-h-96 opacity-100 mt-3'
-                                            : 'max-h-0 opacity-0'
-                                    }`}
-                                >
-                                    <div className=" border-t-2 border-black w-full"></div>
-                                    <p className=" mt-8 text-black leading-6">{question.answer}</p>
-                                </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
+
                     <div className="hidden lg:block">
                         <div className=" absolute -top-[60%] right-0 w-150 h-150 transform pointer-events-none">
                             <Image src="/img/dog.png" fill alt="Крестик маленький" />

@@ -7,7 +7,6 @@ import Contacts from '@/components/section/Contacts';
 import Deadlines from '@/components/section/Deadlines';
 import HowWork from '@/components/section/HowWork';
 import NewHero from '@/components/section/NewHero';
-import Plans from '@/components/section/Plans';
 import Price from '@/components/section/Price';
 import Question from '@/components/section/Question';
 import Services from '@/components/section/Services';

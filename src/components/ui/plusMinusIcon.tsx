@@ -51,7 +51,7 @@ const PlusMinusIcon: React.FC<PlusMinusIconProps> = ({
     disabled = false,
     ariaLabel = 'Переключить иконку плюс/минус',
 }) => {
-    const [isPlus, setIsPlus] = useState<boolean>(initialState);
+    // const [isPlus, setIsPlus] = useState<boolean>(initialState);
 
     // Опции размера
     const sizeOptions: Record<PlusMinusIconSize, SizeOptions> = {
@@ -127,12 +127,13 @@ const PlusMinusIcon: React.FC<PlusMinusIconProps> = ({
     const currentSize = sizeOptions[size];
     const currentColor = colorSchemes[color];
 
+    const isPlus = initialState;
+
     const handleClick = (): void => {
         if (disabled) return;
 
-        const newState = !isPlus;
-        setIsPlus(newState);
-        if (onToggle) onToggle(newState);
+        // Не меняем внутреннее состояние, просто вызываем onToggle
+        if (onToggle) onToggle(!isPlus);
     };
 
     // Рендеринг иконки в зависимости от варианта
@@ -203,13 +204,13 @@ const PlusMinusIcon: React.FC<PlusMinusIconProps> = ({
                 onClick={handleClick}
                 disabled={disabled}
                 className={`
-          rounded-full flex items-center justify-center  
-          hover:shadow-xl transition-all duration-300 
-          ${currentSize.container} 
-          ${isPlus ? currentColor.plus : currentColor.minus}
-          ${variant === 'rotate' ? (isPlus ? 'rotate-0' : 'rotate-180') : ''}
-          ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:scale-105'}
-        `}
+                    rounded-full flex items-center justify-center  
+                    hover:shadow-xl transition-all duration-300 
+                    ${currentSize.container} 
+                    ${isPlus ? currentColor.plus : currentColor.minus}
+                    ${variant === 'rotate' ? (isPlus ? 'rotate-0' : 'rotate-180') : ''}
+                    ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:scale-105'}
+                `}
                 style={{
                     transition: 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
                 }}
@@ -232,6 +233,6 @@ const PlusMinusIcon: React.FC<PlusMinusIconProps> = ({
             </div> */}
         </div>
     );
-};
+};;
 
 export default PlusMinusIcon;

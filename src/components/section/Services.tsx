@@ -1,9 +1,12 @@
 'use client';
 
+import { useState } from 'react';
+import ContactFormModal from '../modals/ContactFormModal';
 import { Button } from '../ui/button';
 import Image from 'next/image';
 
 export default function Services() {
+    const [isContactOpen, setIsContactOpen] = useState(false);
     const services = [
         {
             name: 'Предметная фотосъемка',
@@ -45,12 +48,23 @@ export default function Services() {
                                     <p className=" text-[1.25rem] text-black font-semibold">
                                         от {service.price} ₽
                                     </p>
-                                    <Button variant="default" size="small">
-                                        Подробнее
+
+                                    {/* Кнопка Узнать подробнее  */}
+                                    <Button
+                                        variant="default"
+                                        size="small"
+                                        onClick={() => setIsContactOpen(true)}
+                                    >
+                                        Узнать подробнее
                                     </Button>
                                 </div>
                             </div>
                         ))}
+                        {/* Модальное окно контактов */}
+                        <ContactFormModal
+                            isOpen={isContactOpen}
+                            onClose={() => setIsContactOpen(false)}
+                        />
                     </div>
                     <div className="hidden lg:block relative">
                         <div className=" absolute -top-[10%] left-[10%] w-65 h-65 transform -rotate-28 pointer-events-none">

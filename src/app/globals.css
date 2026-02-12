@@ -10,6 +10,7 @@
   --foreground: #171717;
 
 	--active: #694fd7;
+  --active-middle: #bec3fb;
   --active-light: #e2e8ff;
 	--black: #000;
   --white: #fff;
@@ -29,6 +30,7 @@
   --color-foreground: var(--foreground);
 
   --color-active: var(--active);
+  --color-active-middle: var(--active-middle);
   --color-active-light: var(--active-light);
   --color-black: var(--black);
   --color-white: var(--white);
