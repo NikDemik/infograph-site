@@ -109,9 +109,9 @@ export default function Question() {
                             variants={slideInFromRight(0.4)}
                             animate={floatAnimation(40)}
                             whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-                            className=" absolute -top-[60%] right-0 w-150 h-150 transform pointer-events-none"
+                            className=" absolute -top-[60%] right-[10%] w-100 h-100 transform pointer-events-none"
                         >
-                            <Image src="/img/dog.png" fill alt="Крестик маленький" />
+                            <Image src="/img/dog.png" fill alt="Собачка" />
                         </motion.div>
                         <motion.div
                             variants={slideInFromRight(0.8)}
@@ -119,7 +119,7 @@ export default function Question() {
                             whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
                             className=" absolute top-[50%] right-[20%] w-80 h-80 transform pointer-events-none"
                         >
-                            <Image src="/img/arrow.png" fill alt="Крестик" />
+                            <Image src="/img/arrow.png" fill alt="Стрелочка" />
                         </motion.div>
                     </div>
                 </div>

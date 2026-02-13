@@ -62,7 +62,7 @@ export default function NewHero() {
                             </div>
                         </div>
                     </motion.div>
-                    <div className="col-start-7 col-span-6 z-30 relative">
+                    <div className="col-start-7 col-span-6 z-30 relative pointer-events-none">
                         <motion.div
                             variants={slideInFromRight(0.6)}
                             animate={pulseAnimation(40)}
@@ -77,7 +77,7 @@ export default function NewHero() {
                         </motion.div>
                         <motion.div
                             variants={slideInFromRight(1)}
-                            animate={spinAnimation(200)}
+                            animate={pulseAnimation(60)}
                             className="absolute top-0 left-3/6 w-[17vw] h-[17vw]"
                         >
                             <Image src="/img/ps-icon-3d.png" fill alt="Фотошоп" />

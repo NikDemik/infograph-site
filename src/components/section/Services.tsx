@@ -45,7 +45,7 @@ export default function Services() {
             whileInView="visible"
             viewport={viewportOptions}
             id="services"
-            className=" relative z-10 mt-[8.5vw]"
+            className=" relative z-10 mt-[8.5vw] "
         >
             <motion.h2 variants={slideInFromLeft(0)}>Дополнительные услуги</motion.h2>
             <div className=" flex flex-col gap-5">
@@ -92,15 +92,15 @@ export default function Services() {
                             variants={slideInFromRight(0.4)}
                             animate={floatAnimation(40)}
                             whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-                            className=" absolute -top-[10%] left-[10%] w-65 h-65 transform -rotate-28"
+                            className=" absolute -top-[10%] left-[10%] w-52 h-52 transform -rotate-28"
                         >
                             <Image src="/img/cross.png" fill alt="Крестик маленький" />
                         </motion.div>
                         <motion.div
                             variants={slideInFromRight(0.8)}
-                            animate={spinAnimation(100)}
+                            animate={floatAnimation(100)}
                             whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-                            className=" absolute -bottom-[20%] right-0 w-95 h-95 transform"
+                            className=" absolute -bottom-[20%] right-[10%] w-80 h-80 transform"
                         >
                             <Image src="/img/cross.png" fill alt="Крестик" />
                         </motion.div>

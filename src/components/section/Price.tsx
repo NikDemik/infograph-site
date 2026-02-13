@@ -76,7 +76,6 @@ export default function Price() {
             variants={containerDelay}
             initial="hidden"
             whileInView="visible"
-            viewport={viewportOptions}
             className=" relative z-10 mt-[8.5vw]"
         >
             <motion.h2 variants={slideInFromLeft(0)}>Стоимость</motion.h2>
