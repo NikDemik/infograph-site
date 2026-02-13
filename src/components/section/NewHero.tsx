@@ -1,6 +1,13 @@
 'use client';
 
-import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/utils/motion';
+import {
+    floatAnimation,
+    pulseAnimation,
+    slideInFromLeft,
+    slideInFromRight,
+    slideInFromTop,
+    spinAnimation,
+} from '@/utils/motion';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -58,6 +65,7 @@ export default function NewHero() {
                     <div className="col-start-7 col-span-6 z-30 relative">
                         <motion.div
                             variants={slideInFromRight(0.6)}
+                            animate={pulseAnimation(40)}
                             className=" absolute top-0 left-1/10 w-[21vw] h-[21vw]"
                         >
                             <Image
@@ -69,12 +77,14 @@ export default function NewHero() {
                         </motion.div>
                         <motion.div
                             variants={slideInFromRight(1)}
+                            animate={spinAnimation(200)}
                             className="absolute top-0 left-3/6 w-[17vw] h-[17vw]"
                         >
                             <Image src="/img/ps-icon-3d.png" fill alt="Фотошоп" />
                         </motion.div>
                         <motion.div
                             variants={slideInFromRight(1.4)}
+                            animate={floatAnimation(40)}
                             className="absolute top-3/6 left-2/6 w-[12vw] h-[12vw] "
                         >
                             <Image src="/img/ai-icon-3d.png" fill alt="Илюстратор" />
