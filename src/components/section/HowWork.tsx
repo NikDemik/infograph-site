@@ -5,6 +5,9 @@ import ContactFormModal from '../modals/ContactFormModal';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 
+import { slideInFromLeft, viewportOptions } from '@/utils/motion';
+import { motion } from 'framer-motion';
+
 export default function HowWork() {
     const [isContactOpen, setIsContactOpen] = useState(false);
     const datas = [
@@ -31,23 +34,32 @@ export default function HowWork() {
         { title: 'Все!', desc: '' },
     ];
     return (
-        <section id="how-work" className="relative z-10 mt-[4.5vw] md:py-11 md:bg-gray-light">
+        <motion.section
+            id="how-work"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOptions}
+            className="relative z-10 mt-[4.5vw] md:py-11 md:bg-gray-light"
+        >
             {/* Фон, который выходит за пределы контейнера */}
             <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[99vw] md:bg-gray-light -z-10 dark:bg-gray-900" />
 
-            <h2>Как мы работаем</h2>
+            <motion.h2 variants={slideInFromLeft(0)}>Как мы работаем</motion.h2>
             <div className=" flex flex-col gap-5">
                 <div className=" hidden md:flex justify-between ">
-                    <p className=" mt-5 hidden md:block">
+                    <motion.p variants={slideInFromLeft(0.4)} className=" mt-5 hidden md:block">
                         Понятная и выверенная последовательность действий,
                         <br />
                         обеспечивающая стабильный результат.
-                    </p>
+                    </motion.p>
                 </div>
 
                 {/* Контент десктоп */}
                 <div className=" hidden md:grid grid-cols-1 md:grid-cols-4 gap-7.5">
-                    <div className=" col-span-1 hidden xl:flex">
+                    <motion.div
+                        variants={slideInFromLeft(0.6)}
+                        className=" col-span-1 hidden xl:flex"
+                    >
                         <Image
                             src="/img/how-work-new.png"
                             width={458}
@@ -55,7 +67,7 @@ export default function HowWork() {
                             alt="Инфографика как мы работаем"
                             className=" transform scale-130 -translate-x-18 translate-y-22"
                         />
-                    </div>
+                    </motion.div>
                     <div className="grid col-span-4 col-start-1 xl:col-span-3 xl:col-start-2 ">
                         <div className="flex flex-col gap-28">
                             {/* Карточки с 1-3 */}
@@ -284,6 +296,6 @@ export default function HowWork() {
                     />
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

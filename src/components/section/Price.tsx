@@ -5,6 +5,9 @@ import ContactFormModal from '../modals/ContactFormModal';
 import { Button } from '../ui/button';
 import Image from 'next/image';
 
+import { slideInFromLeft, containerDelay, variantDelayMap, viewportOptions } from '@/utils/motion';
+import { motion } from 'framer-motion';
+
 export default function Price() {
     const [isContactOpen, setIsContactOpen] = useState(false);
     const cards = [
@@ -68,13 +71,20 @@ export default function Price() {
     ];
 
     return (
-        <section id="price" className=" relative z-10 mt-[8.5vw]">
-            <h2>Стоимость</h2>
+        <motion.section
+            id="price"
+            variants={containerDelay(0.2, 0.3)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOptions}
+            className=" relative z-10 mt-[8.5vw]"
+        >
+            <motion.h2 variants={slideInFromLeft(0)}>Стоимость</motion.h2>
             <div className=" flex flex-col gap-5">
                 <div className=" hidden md:flex justify-between ">
-                    <p className=" mt-5 hidden md:block">
+                    <motion.p variants={slideInFromLeft(0.4)} className=" mt-5 hidden md:block">
                         Для вашего удобства мы подготовили пакетные предложения
-                    </p>
+                    </motion.p>
                 </div>
                 <div className="grid grid-cols-1 2xl:grid-cols-2 gap-7.5 mt-10 ">
                     {cards.map((card, index) => {
@@ -95,8 +105,13 @@ export default function Price() {
                                     : card.img.length === 3 && widht[2];
 
                         return (
-                            <div
+                            <motion.div
                                 key={index}
+                                variants={variantDelayMap(0.2)}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={viewportOptions}
+                                custom={index}
                                 className=" w-full h-auto md:h-95 rounded-3xl p-5 flex flex-col justify-between bg-gray-light shadow-main relative"
                             >
                                 {/* Top card */}
@@ -210,7 +225,7 @@ export default function Price() {
                                         </div>
                                     );
                                 })}
-                            </div>
+                            </motion.div>
                         );
                     })}
                     {/* Модальное окно контактов */}
@@ -220,6 +235,6 @@ export default function Price() {
                     />
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

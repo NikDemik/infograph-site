@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+    const currentYear = new Date().getFullYear();
     const pathname = usePathname();
     const isActive = (path: string) => pathname.startsWith(path);
     return (
@@ -59,6 +60,9 @@ export default function Footer() {
                         </li>
                     </ul>
                 </div>
+            </div>
+            <div className="flex justify-center items-center mt-10">
+                <div>© {currentYear} B2B Studio. Все права защищены.</div>
             </div>
         </footer>
     );

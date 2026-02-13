@@ -1,12 +1,20 @@
 'use client';
 
+import {
+    slideInFromLeft,
+    containerDelay,
+    variantDelayMap,
+    viewportOptions,
+    slideInFromRight,
+} from '@/utils/motion';
+import { motion } from 'framer-motion';
+
 import Image from 'next/image';
 import ContactFormTelegram from '../contact/ContactFormTelegram';
 import telegramIcon from '@/assets/svg/telegram.svg';
 import siteIcon from '@/assets/svg/site.svg';
 import phoneIcon from '@/assets/svg/phone.svg';
 import mailIcon from '@/assets/svg/mail.svg';
-import { motion } from 'framer-motion';
 
 export default function Contacts() {
     const contacts = [
@@ -17,8 +25,12 @@ export default function Contacts() {
     ];
 
     return (
-        <section
+        <motion.section
             id="contact"
+            variants={containerDelay(0.2, 0.3)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOptions}
             className=" relative grid grid-cols-1 lg:grid-cols-12 gap-7.5 -10 mt-[8.5vw] "
         >
             {/* Картинка рядом с текстом десктоп */}
@@ -40,24 +52,29 @@ export default function Contacts() {
             </motion.div>
 
             <div className=" col-span-1 lg:col-span-3">
-                <h2>Контакты</h2>
+                <motion.h2 variants={slideInFromLeft(0)}>Контакты</motion.h2>
                 <div className=" mt-5 lg:mt-14 w-full flex flex-col gap-5 ">
                     {contacts.map((contact, index) => (
-                        <div
+                        <motion.div
                             key={index}
+                            custom={index}
+                            variants={variantDelayMap(0.4)}
                             className="flex justify-start gap-6 p-5 bg-gradient-custom rounded-3xl"
                         >
                             <Image src={contact.icon} alt={contact.type} />
                             <p className=" text-[18px] text-black dark:text-white">
                                 {contact.value}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-            <div className=" mt-3 col-span-1 lg:col-span-7 lg:col-start-5">
+            <motion.div
+                variants={slideInFromRight(0.6)}
+                className=" mt-3 col-span-1 lg:col-span-7 lg:col-start-5"
+            >
                 <ContactFormTelegram />
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     );
 }

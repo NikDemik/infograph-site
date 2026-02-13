@@ -1,3 +1,8 @@
+'use client';
+
+import { slideInFromLeft, containerDelay, variantDelayMap, viewportOptions } from '@/utils/motion';
+import { motion } from 'framer-motion';
+
 export default function About() {
     const stats = [
         { label: '1000+', value: 'проектов' },
@@ -6,20 +11,32 @@ export default function About() {
     ];
 
     return (
-        <section id="about" className=" relative z-10 mt-[8.5vw] hidden md:block">
-            <h2>О нас</h2>
+        <motion.section
+            id="about"
+            variants={containerDelay(0.2, 0.3)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOptions}
+            className=" relative z-10 mt-[8.5vw] hidden md:block"
+        >
+            <motion.h2 variants={slideInFromLeft(0)}>О нас</motion.h2>
             <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <p className=" mt-5">
+                <motion.p variants={slideInFromLeft(0.4)} className=" mt-5">
                     Мы создаём инфографику, которая помогает брендам уверенно занимать выдачу и
                     повышать конверсию. Работаем с акцентом на точность, чистый визуальный язык и
                     структурный подход. Фокусируемся на том, чтобы каждая карточка ясно передавала
                     ценность товара, выделяла его среди конкурентов и формировала доверие у
                     покупателей.
-                </p>
+                </motion.p>
                 <div className=" grid grid-cols-3 gap-8">
                     {stats.map((stat, index) => (
-                        <div
+                        <motion.div
                             key={index}
+                            custom={index}
+                            variants={variantDelayMap(0.4)}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={viewportOptions}
                             className=" w-full h-39.75 bg-active-light shadow-main rounded-3xl"
                         >
                             <div className="p-5">
@@ -30,10 +47,10 @@ export default function About() {
                                     {stat.value}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

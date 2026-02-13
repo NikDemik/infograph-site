@@ -3,17 +3,28 @@
 import { Button } from '../ui/button';
 import MySwiper from '../swiper/Swiper';
 import Link from 'next/link';
+
+import { slideInFromLeft, containerDelay, viewportOptions } from '@/utils/motion';
+import { motion } from 'framer-motion';
+
 export default function Works() {
     return (
-        <section id="works" className=" relative z-10 mt-[8.5vw]">
-            <h2>Каталог работ</h2>
+        <motion.section
+            id="works"
+            variants={containerDelay(0.2, 0.3)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOptions}
+            className=" relative z-10 mt-[8.5vw]"
+        >
+            <motion.h2 variants={slideInFromLeft(0)}>Каталог работ</motion.h2>
             <div className=" flex flex-col gap-5">
                 <div className="flex justify-between ">
-                    <p className=" mt-5 hidden md:block">
+                    <motion.p variants={slideInFromLeft(0.4)} className=" mt-5 hidden md:block">
                         Подборка реализованных проектов, демонстрирующая
                         <br />
                         подход к визуализации товаров и качество исполнения.
-                    </p>
+                    </motion.p>
                 </div>
 
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
@@ -37,6 +48,6 @@ export default function Works() {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

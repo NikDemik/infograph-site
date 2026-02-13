@@ -1,5 +1,17 @@
 'use client';
 
+import {
+    slideInFromLeft,
+    containerDelay,
+    variantDelayMap,
+    viewportOptions,
+    slideInFromRight,
+    floatAnimation,
+    spinAnimation,
+    pulseAnimation,
+} from '@/utils/motion';
+import { motion } from 'framer-motion';
+
 import { useState } from 'react';
 import Image from 'next/image';
 import PlusMinusIcon from '@/components/ui/plusMinusIcon';
@@ -14,30 +26,37 @@ export default function Question() {
 
     const questions = [
         {
-            id: 'q1',
+            id: '1',
             title: 'Можно ли получить исходники своих слайдов?',
             answer: 'Да! При необходимости мы подготовим и предоставим вам проект от каждого слайда. В таком случае стоимость заказа увеличится на 10%.',
         },
         {
-            id: 'q2',
+            id: '2',
             title: 'Работаете ли вы по договору?',
             answer: 'Да, при необходимости можем заключить договор! Мы принимаем оплату на расчетный счет, также предоставляем чеки для Физ.лиц и все необходимые закрывающие документы для Юр.лиц.',
         },
         {
-            id: 'q3',
+            id: '3',
             title: 'Как будет проходить работа?',
             answer: 'После оплаты с вами свяжется менеджер для обсуждения подробного тех.задания на основе референсов по стилистике, чтобы вы и мы понимали, какой результат хотим получить по итогам работы. Далее ваш заказ отправляется в разработку, по готовности отправляется вам, и при необходимости вносятся правки.',
         },
         {
-            id: 'q4',
+            id: '4',
             title: 'Что делать, если я еще не знаю, какой текст и наполнение будет на каждом из слайдов?',
             answer: 'Мы можем провести Анализ вашей ниши, товара, конкурентов с помощью сервисов аналитики, и дать подробные рекомендации по продвижению вашего товара, и выстроить продающую смысловую нагрузку в вашей карточке.',
         },
     ];
 
     return (
-        <section id="price" className=" relative z-10 mt-[8.5vw]">
-            <h2>Вопросы</h2>
+        <motion.section
+            id="question"
+            variants={containerDelay(0.2, 0.3)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOptions}
+            className=" relative z-10 mt-[8.5vw]"
+        >
+            <motion.h2 variants={slideInFromLeft(0)}>Вопросы</motion.h2>
             <div className=" flex flex-col gap-5">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-7.5 mt-14 relative">
                     <div className=" flex flex-col gap-7.5 justify-between">
@@ -45,8 +64,10 @@ export default function Question() {
                             const isOpen = activeAccordion === question.id;
 
                             return (
-                                <div
+                                <motion.div
                                     key={question.id}
+                                    custom={question.id}
+                                    variants={variantDelayMap(0.4)}
                                     className=" flex flex-col justify-between w-full bg-gray-light rounded-[20px] px-5 py-3 shadow-main "
                                 >
                                     {/* Вопрос */}
@@ -78,21 +99,31 @@ export default function Question() {
                                             {question.answer}
                                         </p>
                                     </div>
-                                </div>
+                                </motion.div>
                             );
                         })}
                     </div>
 
                     <div className="hidden lg:block">
-                        <div className=" absolute -top-[60%] right-0 w-150 h-150 transform pointer-events-none">
+                        <motion.div
+                            variants={slideInFromRight(0.4)}
+                            animate={floatAnimation(40)}
+                            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+                            className=" absolute -top-[60%] right-0 w-150 h-150 transform pointer-events-none"
+                        >
                             <Image src="/img/dog.png" fill alt="Крестик маленький" />
-                        </div>
-                        <div className=" absolute top-[50%] right-[20%] w-80 h-80 transform pointer-events-none">
+                        </motion.div>
+                        <motion.div
+                            variants={slideInFromRight(0.8)}
+                            animate={pulseAnimation}
+                            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+                            className=" absolute top-[50%] right-[20%] w-80 h-80 transform pointer-events-none"
+                        >
                             <Image src="/img/arrow.png" fill alt="Крестик" />
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
