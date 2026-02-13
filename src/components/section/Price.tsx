@@ -73,7 +73,7 @@ export default function Price() {
     return (
         <motion.section
             id="price"
-            variants={containerDelay(0.2, 0.3)}
+            variants={containerDelay}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
@@ -107,7 +107,7 @@ export default function Price() {
                         return (
                             <motion.div
                                 key={index}
-                                variants={variantDelayMap(0.2)}
+                                variants={variantDelayMap}
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={viewportOptions}

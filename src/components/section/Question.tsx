@@ -50,7 +50,7 @@ export default function Question() {
     return (
         <motion.section
             id="question"
-            variants={containerDelay(0.2, 0.3)}
+            variants={containerDelay}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
@@ -67,7 +67,7 @@ export default function Question() {
                                 <motion.div
                                     key={question.id}
                                     custom={question.id}
-                                    variants={variantDelayMap(0.4)}
+                                    variants={variantDelayMap}
                                     className=" flex flex-col justify-between w-full bg-gray-light rounded-[20px] px-5 py-3 shadow-main "
                                 >
                                     {/* Вопрос */}
@@ -115,7 +115,7 @@ export default function Question() {
                         </motion.div>
                         <motion.div
                             variants={slideInFromRight(0.8)}
-                            animate={pulseAnimation}
+                            animate={pulseAnimation(20)}
                             whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
                             className=" absolute top-[50%] right-[20%] w-80 h-80 transform pointer-events-none"
                         >

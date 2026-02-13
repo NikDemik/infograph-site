@@ -40,7 +40,7 @@ export default function Services() {
 
     return (
         <motion.section
-            variants={containerDelay(0.2, 0.3)}
+            variants={containerDelay}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
@@ -60,7 +60,7 @@ export default function Services() {
                         {services.map((service, index) => (
                             <motion.div
                                 key={index}
-                                variants={variantDelayMap(0.4)}
+                                variants={variantDelayMap}
                                 custom={index}
                                 className=" flex flex-col gap-5 lg:flex-row justify-between items-center w-full bg-gray-light rounded-[20px] p-5 shadow-main"
                             >
@@ -90,7 +90,7 @@ export default function Services() {
                     <div className="hidden lg:block relative">
                         <motion.div
                             variants={slideInFromRight(0.4)}
-                            animate={floatAnimation}
+                            animate={floatAnimation(40)}
                             whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
                             className=" absolute -top-[10%] left-[10%] w-65 h-65 transform -rotate-28"
                         >

@@ -11,7 +11,7 @@ export default function Works() {
     return (
         <motion.section
             id="works"
-            variants={containerDelay(0.2, 0.3)}
+            variants={containerDelay}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}

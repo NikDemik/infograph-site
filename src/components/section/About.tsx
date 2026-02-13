@@ -13,7 +13,7 @@ export default function About() {
     return (
         <motion.section
             id="about"
-            variants={containerDelay(0.2, 0.3)}
+            variants={containerDelay}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
@@ -33,7 +33,7 @@ export default function About() {
                         <motion.div
                             key={index}
                             custom={index}
-                            variants={variantDelayMap(0.4)}
+                            variants={variantDelayMap}
                             viewport={viewportOptions}
                             className=" w-full h-39.75 bg-active-light shadow-main rounded-3xl"
                         >

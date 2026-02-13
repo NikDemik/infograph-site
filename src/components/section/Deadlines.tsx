@@ -9,7 +9,7 @@ export default function Deadlines() {
     return (
         <motion.section
             id="deadlines"
-            variants={containerDelay(0.2, 0.3)}
+            variants={containerDelay}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}

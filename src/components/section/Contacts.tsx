@@ -27,7 +27,7 @@ export default function Contacts() {
     return (
         <motion.section
             id="contact"
-            variants={containerDelay(0.2, 0.3)}
+            variants={containerDelay}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
@@ -58,7 +58,7 @@ export default function Contacts() {
                         <motion.div
                             key={index}
                             custom={index}
-                            variants={variantDelayMap(0.4)}
+                            variants={variantDelayMap}
                             className="flex justify-start gap-6 p-5 bg-gradient-custom rounded-3xl"
                         >
                             <Image src={contact.icon} alt={contact.type} />
