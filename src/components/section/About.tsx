@@ -32,7 +32,6 @@ export default function About() {
                     {stats.map((stat, index) => (
                         <motion.div
                             key={index}
-                            custom={index}
                             variants={variantDelayMap}
                             viewport={viewportOptions}
                             className=" w-full h-39.75 bg-active-light shadow-main rounded-3xl"
