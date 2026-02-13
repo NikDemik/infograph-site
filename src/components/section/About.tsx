@@ -34,8 +34,6 @@ export default function About() {
                             key={index}
                             custom={index}
                             variants={variantDelayMap(0.4)}
-                            initial="hidden"
-                            whileInView="visible"
                             viewport={viewportOptions}
                             className=" w-full h-39.75 bg-active-light shadow-main rounded-3xl"
                         >

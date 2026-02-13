@@ -48,7 +48,7 @@ export function slideInFromBottom(delay: number = 0) {
             transition: {
                 delay: delay,
                 duration: 0.5,
-                ease: "easeOut",
+                ease: 'easeOut' as const,
             },
         },
     };
