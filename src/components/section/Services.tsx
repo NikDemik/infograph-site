@@ -22,19 +22,19 @@ export default function Services() {
     const services = [
         {
             name: 'Предметная фотосъемка',
-            price: '300',
+            price: '250',
         },
         {
             name: 'Статичные рекламные баннеры',
-            price: '300',
+            price: '1500',
         },
         {
             name: 'Логотипы',
-            price: '300',
+            price: '3000',
         },
         {
             name: 'Дизайн сайтов',
-            price: '300',
+            price: '10000',
         },
     ];
 
