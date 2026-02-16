@@ -24,18 +24,41 @@ export default function HeaderMobil() {
         };
     }, [menuOpen]);
 
-    // Добавьте в useEffect
+    // Закрытие меню свайпом
     useEffect(() => {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
         const handleTouchStart = (e: TouchEvent) => {
-            // Логика для свайпа
+            touchStartX = e.touches[0].clientX;
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            touchEndX = e.touches[0].clientX;
+        };
+
+        const handleTouchEnd = () => {
+            const swipeDistance = touchEndX - touchStartX;
+
+            // Закрываем при свайпе вправо (меню справа, свайп вправо его закрывает)
+            if (swipeDistance > 50) {
+                setMenuOpen(false);
+            }
+
+            touchStartX = 0;
+            touchEndX = 0;
         };
 
         if (menuOpen) {
             window.addEventListener('touchstart', handleTouchStart);
+            window.addEventListener('touchmove', handleTouchMove);
+            window.addEventListener('touchend', handleTouchEnd);
         }
 
         return () => {
             window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchmove', handleTouchMove);
+            window.removeEventListener('touchend', handleTouchEnd);
         };
     }, [menuOpen]);
 
