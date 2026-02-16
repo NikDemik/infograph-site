@@ -8,8 +8,8 @@ const buttonVariants = cva(
         variants: {
             variant: {
                 default:
-                    'text-[1.25rem] hover:bg-black hover:opacity-90 hover:text-white active:scale-95 active:text-[1.2rem]',
-                home: 'text-xl md:text-[2.5vw] font-bold hover:bg-black hover:opacity-90 hover:text-white active:scale-95 active:text-[2.6vw]',
+                    'text-[1.25rem] hover:bg-active hover:border-active hover:opacity-90 hover:text-white active:scale-95 active:text-[1.2rem]',
+                home: 'text-xl md:text-[2.5vw] font-bold hover:bg-active hover:border-active hover:opacity-90 hover:text-white active:scale-95 active:text-[2.6vw]',
                 outline:
                     ' border-none focus-visible:none hover:bg-muted hover:text-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 aria-expanded:bg-muted aria-expanded:text-foreground',
             },

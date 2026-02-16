@@ -7,6 +7,17 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
 
+const slides = [
+    { img: 'Наши работы инфографики карточка 1', src: '/products/card-product-1.png' },
+    { img: 'Наши работы инфографики карточка 2', src: '/products/card-product-2.png' },
+    { img: 'Наши работы инфографики карточка 3', src: '/products/card-product-3.png' },
+    { img: 'Наши работы инфографики карточка 4', src: '/products/card-product-4.png' },
+    { img: 'Наши работы инфографики карточка 5', src: '/products/card-product-5.png' },
+    { img: 'Наши работы инфографики карточка 6', src: '/products/card-product-6.png' },
+    { img: 'Наши работы инфографики карточка 7', src: '/products/card-product-7.png' },
+    { img: 'Наши работы инфографики карточка 8', src: '/products/card-product-8.png' },
+];
+
 export default function MySwiper() {
     return (
         <>
@@ -29,46 +40,11 @@ export default function MySwiper() {
                     1280: { slidesPerView: 4 },
                 }}
             >
-                <SwiperSlide>
-                    <Image
-                        src="/products/slide-1.png"
-                        width={324}
-                        height={431}
-                        alt="Наши работы слайд 1"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image
-                        src="/products/slide-2.png"
-                        width={324}
-                        height={431}
-                        alt="Наши работы слайд 2"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image
-                        src="/products/slide-3.png"
-                        width={324}
-                        height={431}
-                        alt="Наши работы слайд 3"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image
-                        src="/products/slide-4.png"
-                        width={324}
-                        height={431}
-                        alt="Наши работы слайд 4"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image
-                        src="/products/slide-5.png"
-                        width={324}
-                        height={431}
-                        alt="Наши работы слайд 5"
-                    />
-                </SwiperSlide>
+                {slides.map((slide, img) => (
+                    <SwiperSlide>
+                        <Image src={slide.src} width={324} height={431} alt={slide.img} />
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </>
     );

@@ -80,7 +80,7 @@
     }
 
   h4 {
-      @apply text-xl lg:text-[1.625rem] font-bold
+      @apply text-xl xl:text-2xl font-bold
     }
 
   .bg-banner-gradient {
