@@ -63,7 +63,7 @@ export function SectionShell({ children }: { children: React.ReactNode }) {
                 </div>
             </div>
 
-            <div className="absolute inset-0 -z-10 pointer-events-none">
+            <div className="absolute hidden md:block inset-0 -z-10 pointer-events-none">
                 {/* Объект 1 — синяя звезда */}
                 <motion.div
                     animate={{

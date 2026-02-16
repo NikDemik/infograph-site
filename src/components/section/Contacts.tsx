@@ -31,7 +31,7 @@ export default function Contacts() {
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
-            className=" relative grid grid-cols-1 lg:grid-cols-12 gap-7.5 -10 mt-[8.5vw] "
+            className=" relative grid grid-cols-1 lg:grid-cols-12 gap-7.5 -10 mt-[8.5vw] overflow-hidden md:overflow-visible"
         >
             {/* Картинка рядом с текстом десктоп */}
             <motion.div
